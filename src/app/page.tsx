@@ -4,6 +4,7 @@ import { useLocale } from "@/lib/locale-context";
 import { numbers, site, toolkit } from "@/data/site";
 import { featuredSlugs, projects } from "@/data/projects";
 import { ui } from "@/data/ui";
+import { DragScroller } from "@/components/DragScroller";
 import { FadeUp } from "@/components/FadeUp";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SectionTitle } from "@/components/SectionTitle";
@@ -61,33 +62,24 @@ export default function HomePage() {
       </section>
 
       {/* ── Selected Work ────────────────────────────────────────────────── */}
-      <section
-        className="container-page"
-        style={{ paddingTop: "var(--space-section)" }}
-      >
-        <FadeUp>
-          <SectionTitle
-            title={ui.selectedWorkTitle}
-            action={{ label: ui.viewAllWork, href: "/work" }}
-          />
-        </FadeUp>
+      <section style={{ paddingTop: "var(--space-section)" }}>
+        <div className="container-page">
+          <FadeUp>
+            <SectionTitle
+              title={ui.selectedWorkTitle}
+              action={{ label: ui.viewAllWork, href: "/work" }}
+            />
+          </FadeUp>
+        </div>
 
         {/*
-          카드 크기를 줄이지 않고 한 줄로 나열한다. 화면을 넘치는 만큼은
-          가로로 스크롤한다 — 안 그러면 뒤쪽 카드에 닿을 방법이 없다.
-
-          좌우 여백만큼 음수 마진을 줘 화면 끝까지 흘러나가게 하고,
-          같은 크기의 패딩으로 첫 카드는 본문과 줄을 맞춘다.
+          카드 크기를 줄이지 않고 한 줄로 나열한다. 컨테이너 안에 가두지
+          않고 화면 끝까지 흘려보내되, 시작점만 본문과 줄을 맞춘다.
+          넘치는 만큼은 마우스로 끌어서 본다.
         */}
-        <div
-          role="region"
-          aria-label={t(ui.selectedWorkTitle)}
-          tabIndex={0}
-          className="mt-12 overflow-x-auto"
-          style={{
-            marginInline: "calc(var(--gutter) * -1)",
-            paddingInline: "var(--gutter)",
-          }}
+        <DragScroller
+          label={t(ui.selectedWorkTitle)}
+          className="bleed-row mt-12"
         >
           <div className="flex" style={{ gap: "var(--space-block)" }}>
             {featured.map((project, index) => (
@@ -106,7 +98,7 @@ export default function HomePage() {
               </FadeUp>
             ))}
           </div>
-        </div>
+        </DragScroller>
       </section>
 
       {/* ── Numbers ──────────────────────────────────────────────────────── */}

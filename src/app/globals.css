@@ -140,6 +140,30 @@ body {
   }
 }
 
+/* 컨테이너에 갇히지 않고 화면 끝까지 흐르는 영역.
+   시작점만 본문과 맞추고 오른쪽은 화면 밖으로 이어진다.
+
+   100vw를 쓰지 않는다 — 세로 스크롤바가 있는 환경에서 100vw는 실제
+   보이는 폭보다 넓어서 페이지 전체가 가로로 밀린다. 대신 부모 폭(100%)에서
+   컨테이너 폭을 빼 시작 여백을 계산한다. */
+.bleed-row {
+  padding-inline-start: max(
+    var(--gutter),
+    calc((100% - var(--container-page)) / 2 + var(--gutter))
+  );
+  padding-inline-end: var(--gutter);
+}
+
+/* 스크롤바를 숨긴다. 숨기는 만큼 다른 조작 수단(드래그·키보드)을
+   반드시 함께 제공해야 한다. */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* 모션 토큰을 클래스로 노출한다. Tailwind는 --duration-* / --ease-* 에서
    유틸리티를 자동 생성하지 않으므로, 컴포넌트가 임의값을 쓰지 않도록 여기서 만든다.
    transition 속성 지정은 Tailwind의 transition-colors 등과 함께 쓴다. */
