@@ -53,7 +53,8 @@ export const ui = {
 } satisfies Record<string, LocalizedText>;
 
 export const categoryLabel: Record<ProjectCategory, LocalizedText> = {
-  "ui-ai": { ko: "UI·AI 구현", en: "UI & AI" },
+  // 카테고리 값("ui-ai")은 URL 쿼리에 쓰이므로 바꾸지 않는다. 라벨만 바꾼다.
+  "ui-ai": { ko: "UXUI·AI 구현", en: "UXUI & AI" },
   branding: { ko: "브랜딩·그래픽", en: "Branding & Graphics" },
 };
 
