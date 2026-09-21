@@ -148,25 +148,6 @@ body {
   transition-timing-function: var(--ease-out-soft);
 }
 
-/* 커서를 따라다니는 스포트라이트 텍스트.
-   호버하지 않은 상태에는 아무 스타일도 걸지 않는다 — 그래야
-   background-clip이 동작하지 않는 환경에서도 글자가 사라지지 않는다. */
-.spotlight-text {
-  --spotlight-x: 50%;
-  --spotlight-y: 50%;
-}
-
-.spotlight-text[data-active="true"] {
-  background-image: radial-gradient(
-    circle 16rem at var(--spotlight-x) var(--spotlight-y),
-    var(--color-accent),
-    var(--color-ink) 70%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
 /* ==========================================================================
    모션 — 접근성 대응
    스크롤 페이드업 등 모든 애니메이션은 이 설정을 존중해야 한다.
@@ -180,12 +161,5 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-
-  /* 커서를 쫓아다니는 그라데이션은 모션을 줄이기로 한 사용자에게
-     산만하게 읽힌다. 평범한 텍스트로 되돌린다. */
-  .spotlight-text[data-active="true"] {
-    background-image: none;
-    color: var(--color-ink);
   }
 }
