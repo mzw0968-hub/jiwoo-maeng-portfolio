@@ -11,7 +11,7 @@ import type { LocalizedText } from "@/lib/types";
  * 비어 있으면 회색 플레이스홀더가 자리를 지켜 레이아웃이 흔들리지 않는다.
  * 세로 4:5 비율로 잘리므로 인물이 가운데 오는 사진이 좋다.
  */
-export const profileImage = "";
+export const profileImage = "/profile/jiwoo.png";
 
 /** 사진의 대체 텍스트. 스크린리더가 읽는다. */
 export const profileAlt: LocalizedText = {
@@ -26,8 +26,8 @@ export const role: LocalizedText = {
 };
 
 export const intro: LocalizedText = {
-  ko: "[짧은 자기소개를 3~4문장으로 채워주세요. 어떤 디자이너인지, 무엇을 만들어 왔는지, 지금 무엇에 관심이 있는지.]",
-  en: "[A short introduction in three or four sentences: what kind of designer you are, what you've built, and what you're interested in now.]",
+  ko: "사용자의 문제를 발견하고, AI를 활용해 실제로 작동하는 경험으로 구현하는 신입 디자이너입니다. 서비스의 맥락을 이해한 UI·UX 설계부터 인터랙티브 프로토타입 제작까지 직접 진행해 왔습니다. 현재는 AI가 사용자의 행동과 자연스럽게 연결되는 인터페이스와 워크플로에 관심이 있습니다. 디자인과 기술을 연결해 더 직관적인 경험을 만드는 AX 디자이너로 성장하고 싶습니다.",
+  en: "I am a junior designer who finds the problems people run into and uses AI to build them into experiences that actually work. I have carried projects through myself — from UI and UX design grounded in a service's context to interactive prototypes. Right now I am interested in interfaces and workflows where AI connects naturally to what people are already doing. I want to grow into an AX designer who links design and technology to make experiences more intuitive.",
 };
 
 /** AX 디자이너 명제와 직결되는 문단이라 별도 블록으로 둔다. (PRD 5.4) */

@@ -39,7 +39,10 @@ export function AboutContent() {
                   fill
                   priority
                   sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover"
+                  /* 배경이 투명한 컷아웃 사진이라 잘라내지 않고 전체를 담는다.
+                     남는 자리는 surface 색이 채워 판 위에 인물이 올라간 형태가 된다.
+                     배경이 있는 일반 사진으로 바꾸면 object-cover가 더 낫다. */
+                  className="object-contain"
                 />
               ) : (
                 <div className="flex h-full w-full items-center justify-center">
