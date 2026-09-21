@@ -97,6 +97,9 @@ export function ProjectDetail({ project }: { project: Project }) {
               width={project.cover.width}
               height={project.cover.height}
               priority
+              /* 케이스 스터디는 작은 글씨가 많다. 기본 75로는 텍스트
+                 가장자리에 압축 잡티가 보여 90으로 올린다. */
+              quality={90}
               sizes="(min-width: 1280px) 1200px, 100vw"
               className="h-auto w-full"
             />
