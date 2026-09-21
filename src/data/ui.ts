@@ -30,7 +30,9 @@ export const ui = {
   socialGroupLabel: { ko: "소셜", en: "Social" },
   resumeDownload: { ko: "이력서 내려받기", en: "Download résumé" },
   toolkitTitle: { ko: "Design Skills", en: "Design Skills" },
-  selectedWorkTitle: { ko: "Projects", en: "Projects" },
+  /** 홈 섹션용. Work 목록 페이지 제목은 projectsTitle을 쓴다. */
+  selectedWorkTitle: { ko: "Selected Projects", en: "Selected Projects" },
+  projectsTitle: { ko: "Projects", en: "Projects" },
   numbersTitle: { ko: "Numbers", en: "Numbers" },
   notesTitle: { ko: "Notes", en: "Notes" },
   readMore: { ko: "읽기", en: "Read" },

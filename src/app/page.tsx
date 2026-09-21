@@ -9,6 +9,7 @@ import { ui } from "@/data/ui";
 import { FadeUp } from "@/components/FadeUp";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SectionTitle } from "@/components/SectionTitle";
+import { ToolLogo } from "@/components/ToolLogo";
 
 const featured = featuredSlugs
   .map((slug) => projects.find((project) => project.slug === slug))
@@ -44,10 +45,14 @@ export default function HomePage() {
           <h2 className="text-caption text-ink-muted text-center">
             {t(ui.toolkitTitle)}
           </h2>
-          <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+          <ul className="text-ink-muted mt-8 flex flex-wrap items-start justify-center gap-x-10 gap-y-8">
             {toolkit.map((tool) => (
-              <li key={tool} className="text-body text-ink-muted">
-                {tool}
+              <li
+                key={tool.name}
+                className="flex w-20 flex-col items-center gap-3"
+              >
+                <ToolLogo name={tool.name} src={tool.logo} />
+                <span className="text-caption text-center">{tool.name}</span>
               </li>
             ))}
           </ul>

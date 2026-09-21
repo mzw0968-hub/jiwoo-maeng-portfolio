@@ -45,7 +45,7 @@ export function WorkList() {
       }}
     >
       <FadeUp>
-        <SectionTitle as="h1" title={ui.selectedWorkTitle} />
+        <SectionTitle as="h1" title={ui.projectsTitle} />
       </FadeUp>
 
       <FadeUp>

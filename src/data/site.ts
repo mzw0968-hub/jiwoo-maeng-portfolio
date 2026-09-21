@@ -23,16 +23,26 @@ export const site = {
  * AI Toolkit — 홈에서 가로 한 줄로 늘어놓는다.
  * 도구 이름은 고유명사라 번역하지 않는다.
  */
-export const toolkit: string[] = [
-  "Figma",
-  "Figma Make",
-  "Claude Code",
-  "Codex",
-  "Gemini",
-  "Grok Bot",
-  "Antigravity",
-  "Photoshop",
-  "Illustrator",
+export type Tool = {
+  name: string;
+  /**
+   * public/logos/ 에 넣은 SVG 경로. 비워 두면 내장 로고를 찾고,
+   * 그것도 없으면 이니셜 플레이스홀더가 표시된다.
+   * 넣는 방법은 public/logos/README.md 참고.
+   */
+  logo?: string;
+};
+
+export const toolkit: Tool[] = [
+  { name: "Figma" }, // 내장 로고
+  { name: "Figma Make" },
+  { name: "Claude Code" }, // 내장 로고
+  { name: "Codex" },
+  { name: "Gemini" }, // 내장 로고
+  { name: "Grok Bot" },
+  { name: "Antigravity" },
+  { name: "Photoshop" },
+  { name: "Illustrator" },
 ];
 
 export type Stat = {
