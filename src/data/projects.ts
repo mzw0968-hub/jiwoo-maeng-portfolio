@@ -60,8 +60,9 @@ export const projects: Project[] = [
       en: "Google Maps Redesign",
     },
     summary: {
-      ko: "[한 줄 요약을 채워주세요.]",
-      en: "[Add a one-line summary.]",
+      // 초안입니다. 원문 문장에서 뽑았으니 마음에 들지 않으면 바꿔주세요.
+      ko: "앱을 벗어나지 않고 지금 보고 있는 장소를 바로 AI에게 물어볼 수 있게 한 Google Maps 개선 제안",
+      en: "A Google Maps concept that lets you ask AI about the place you are looking at, without ever leaving the app.",
     },
     category: "ui-ai",
     status: "done",
@@ -69,31 +70,31 @@ export const projects: Project[] = [
       ko: "UX 리서치 · 인터랙션 디자인 · 구현",
       en: "UX Research · Interaction Design · Development",
     },
-    period: "[기간]",
-    tools: ["Figma"],
+    period: "7 Days",
+    tools: ["Figma", "Codex"],
     // 카드에 영상을 쓰는 프로젝트. 파일을 넣으면 자동 재생된다.
     // video: "/projects/google-maps/preview.mp4",
     // thumbnail: "/projects/google-maps/poster.jpg",
     body: {
       problem: {
-        ko: "[기존 Google Maps의 어떤 지점이 불편했는지 적어주세요.]",
-        en: "[Which part of the existing Google Maps experience felt broken.]",
+        ko: "일본 여행 중 Google Maps에서 길을 찾다가, 지도에 이름이 표시되지 않은 건물의 정보를 확인하기 위해 앱을 나와 별도로 GPT를 실행해야 했습니다. 장소를 보고 있던 맥락이 끊기고 추가 탐색이 발생하는 문제를 발견해, 선택한 장소에서 바로 AI에게 질문할 수 있는 경험을 제안했습니다.",
+        en: "While finding my way with Google Maps on a trip to Japan, I wanted to know about a building the map did not name — which meant leaving the app and opening GPT separately. The context I had been looking at broke, and the search started over. So I proposed an experience where you can ask AI about a place directly from the place itself.",
       },
       process: {
-        ko: "[MCP로 실제 서비스 화면을 참고한 과정과 와이어프레임 단계를 적어주세요.]",
-        en: "[How you referenced the real product through MCP, and the wireframing stage.]",
+        ko: "MCP를 활용해 Mobbin의 Google Maps iOS 화면과 실제 Google Maps에서 Flatiron Building을 선택한 화면을 참고했습니다. 검색창, 핀, 장소 정보 Bottom Sheet, 액션 버튼, 사진 타일 등 기존 디자인 시스템의 구조와 간격을 분석했습니다.\n\n이후 393×852px 모바일 화면을 기준으로 장소 선택 → 정보 시트 확장 → Ask Maps 실행 → 질문 입력 → 답변 확인 순서의 와이어프레임을 제작했습니다. Figma MCP로 각 화면의 레이아웃과 에셋을 가져와 HTML 프로토타입과 비교하며 디테일을 보정했습니다.",
+        en: "Through MCP I referenced Mobbin's Google Maps iOS screens and the real Google Maps view with the Flatiron Building selected, analysing the structure and spacing of the existing design system — the search field, pins, the place information bottom sheet, action buttons and photo tiles.\n\nI then built wireframes on a 393×852px mobile frame following the sequence: select a place → expand the information sheet → trigger Ask Maps → type a question → read the answer. Figma MCP brought each screen's layout and assets across, and I corrected the details against the HTML prototype.",
       },
       aiWorkflow: {
-        ko: "[인터랙티브 애니메이션을 구현하고 영상으로 인코딩하기까지 어떤 엔진을 썼는지 적어주세요.]",
-        en: "[Which engines you used to build the interactive animation and encode it to video.]",
+        ko: "React·TypeScript와 CSS Transition을 사용해 Bottom Sheet 드래그, 버튼 Pressed 상태, 순차 등장, 키보드 전환, 로딩, 답변 스크롤 애니메이션을 구현했습니다.\n\nPlaywright로 전체 인터랙션을 자동 실행하고 녹화했으며, FFmpeg의 H.264 엔진으로 4:3 비율의 2K 및 2880×2160 고화질 영상으로 인코딩했습니다. 타이핑 속도와 버튼 누름 시간, 드래그 가속도까지 스크립트로 조정해 실제 사용 흐름처럼 연출했습니다.",
+        en: "I built the bottom sheet drag, button pressed states, staggered entrances, keyboard transitions, loading and answer-scroll animations in React and TypeScript with CSS transitions.\n\nPlaywright drove and recorded the whole interaction automatically, and FFmpeg's H.264 encoder produced 4:3 video at 2K and 2880×2160. Typing speed, button press duration and drag acceleration were all tuned in the script so the recording reads like real use.",
       },
       result: {
-        ko: "[최종 인터랙션 결과를 적어주세요. 영상이 여기 들어갑니다.]",
-        en: "[The final interaction. The video goes here.]",
+        ko: "Flatiron Building의 장소 정보 시트를 올리고 Ask Maps 버튼을 누르면 Gemini Bottom Sheet가 나타납니다. 사용자가 질문을 입력하면 Searching the web 로딩을 거쳐 장소 맥락에 맞는 답변이 표시되며, 긴 답변은 고정된 입력 영역 안에서 끝까지 스크롤할 수 있습니다.\n\n기존 Google Maps의 디자인 언어를 유지하면서, 앱을 벗어나지 않고 현재 보고 있는 장소를 탐색할 수 있는 인터랙티브 프로토타입과 시연 영상을 완성했습니다.",
+        en: "Pulling up the Flatiron Building's place sheet and pressing Ask Maps brings up a Gemini bottom sheet. Type a question and it runs a “Searching the web” loading state before showing an answer grounded in that place; long answers scroll all the way through inside a fixed input area.\n\nThe result is an interactive prototype and a demo video that hold on to Google Maps' existing design language while letting you explore the place in front of you without leaving the app.",
       },
       learnings: {
-        ko: "[배운 점 2~3줄.]",
-        en: "[Two or three lines on what you learned.]",
+        ko: "기존 서비스를 개선할 때는 새로운 UI를 만드는 것보다 익숙한 디자인 시스템과 사용 맥락을 유지하는 것이 중요하다는 점을 배웠습니다. 또한 정적인 화면만으로는 전달하기 어려운 경험도 모션의 순서와 속도를 세밀하게 설계하면 훨씬 명확하게 설명할 수 있었습니다.",
+        en: "Improving an existing service taught me that holding on to a familiar design system and usage context matters more than inventing new UI. I also found that an experience static screens struggle to convey becomes far clearer once the order and speed of the motion are designed carefully.",
       },
     },
   },
