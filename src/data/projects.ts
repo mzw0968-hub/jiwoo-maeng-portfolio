@@ -195,8 +195,8 @@ export const projects: Project[] = [
         en: "People with hearing impairments follow an in-person conversation by reading the speaker's lips. Once several people are talking, the thread breaks while their eyes move between speakers, and lip-reading alone stops being enough to keep up. When that happens often enough, taking part in a conversation becomes a burden in itself, and group gatherings are the first thing to go. We defined this not as a problem of “not being able to hear”, but of “having no way to follow the flow of a conversation”.",
       },
       process: {
-        ko: "팀원 3명과 3개월 동안 진행했습니다. 실제 사용자 조사에서 출발해 앱 디자인과 프로토타이핑까지 마쳤습니다.",
-        en: "I worked on this with three teammates over three months. We started from research with actual users and carried it through to app design and prototyping.",
+        ko: "팀원 3명과 함께 3개월 동안 리서치부터 프로토타이핑까지 진행했습니다.\n\n사용자 조사: 청각장애인 3명을 대상으로 인터뷰를 진행해, 다자간 대화에서 가장 어려운 순간과 현재 사용하는 대처 방법을 파악했습니다.\n\n컨셉 설계: Picon AI가 목소리로 연락처를 저장하고 텍스트를 구분하여 대화 로그를 보여주도록 하였습니다.\n\nUI 디자인: 대화 중 시선 이동을 최소화하는 것을 기준으로 화면 구조와 정보 위계를 설계했습니다.\n\n프로토타이핑: 실제 대화 상황을 가정한 프로토타입으로 핵심 플로우를 검증했습니다.",
+        en: "I worked on this with three teammates over three months, from research through to prototyping.\n\nUser research: We interviewed three people with hearing impairments to find the hardest moments in a group conversation and the workarounds they already rely on.\n\nConcept: Picon AI saves contacts by voice and separates each speaker's text, so the conversation can be read back as a log.\n\nUI design: We designed the screen structure and information hierarchy around a single criterion — minimising eye movement during a conversation.\n\nPrototyping: We validated the core flow with a prototype built around a real conversation scenario.",
       },
       result: {
         ko: "[결과물을 적어주세요.]",
