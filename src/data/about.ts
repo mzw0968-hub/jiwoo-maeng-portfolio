@@ -4,6 +4,27 @@ import type { LocalizedText } from "@/lib/types";
  * About 페이지 콘텐츠.
  */
 
+/**
+ * 프로필 사진.
+ *
+ * public/profile/ 에 파일을 넣고 경로를 채우면 표시된다.
+ * 비어 있으면 회색 플레이스홀더가 자리를 지켜 레이아웃이 흔들리지 않는다.
+ * 세로 4:5 비율로 잘리므로 인물이 가운데 오는 사진이 좋다.
+ */
+export const profileImage = "";
+
+/** 사진의 대체 텍스트. 스크린리더가 읽는다. */
+export const profileAlt: LocalizedText = {
+  ko: "맹지우 프로필 사진",
+  en: "Portrait of Jiwoo Maeng",
+};
+
+/** 사진 옆에 붙는 한 줄. 이름 아래 직함처럼 쓰인다. */
+export const role: LocalizedText = {
+  ko: "AX 디자이너",
+  en: "AX Designer",
+};
+
 export const intro: LocalizedText = {
   ko: "[짧은 자기소개를 3~4문장으로 채워주세요. 어떤 디자이너인지, 무엇을 만들어 왔는지, 지금 무엇에 관심이 있는지.]",
   en: "[A short introduction in three or four sentences: what kind of designer you are, what you've built, and what you're interested in now.]",

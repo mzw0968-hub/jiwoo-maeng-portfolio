@@ -1,8 +1,18 @@
 "use client";
 
+import Image from "next/image";
 import { useLocale } from "@/lib/locale-context";
-import { collaboration, intro, timeline, tools } from "@/data/about";
+import {
+  collaboration,
+  intro,
+  profileAlt,
+  profileImage,
+  role,
+  timeline,
+  tools,
+} from "@/data/about";
 import { site } from "@/data/site";
+import { ui } from "@/data/ui";
 import { FadeUp } from "@/components/FadeUp";
 
 export function AboutContent() {
@@ -16,11 +26,39 @@ export function AboutContent() {
         paddingBottom: "var(--space-section)",
       }}
     >
+      {/* 프로필 — 사진과 자기소개 */}
       <FadeUp>
-        <h1 className="text-h1">{t(site.name)}</h1>
-        <p className="text-body text-ink-muted mt-8 max-w-[58ch] text-pretty">
-          {t(intro)}
-        </p>
+        <section className="md:grid md:grid-cols-12 md:gap-12">
+          {/* 사진이 없으면 회색 플레이스홀더가 비율을 지킨다 */}
+          <div className="md:col-span-4">
+            <div className="relative aspect-[4/5] w-full max-w-xs overflow-hidden rounded-md bg-surface md:max-w-none">
+              {profileImage ? (
+                <Image
+                  src={profileImage}
+                  alt={t(profileAlt)}
+                  fill
+                  priority
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover"
+                />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center">
+                  <span className="text-caption text-ink-muted">
+                    {t(ui.noImage)}
+                  </span>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className="mt-10 md:col-span-8 md:mt-0">
+            <h1 className="text-h1">{t(site.name)}</h1>
+            <p className="text-body text-ink-muted mt-2">{t(role)}</p>
+            <p className="text-body mt-8 max-w-[58ch] whitespace-pre-line text-pretty">
+              {t(intro)}
+            </p>
+          </div>
+        </section>
       </FadeUp>
 
       {/* 협업 방식 — AX 디자이너 명제와 직결되는 문단이라 따로 세운다 */}
