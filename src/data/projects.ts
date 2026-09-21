@@ -250,7 +250,7 @@ export const projects: Project[] = [
 ];
 
 /** 홈 Projects 섹션에 노출할 프로젝트. 순서도 이 배열을 따른다. */
-export const featuredSlugs = ["picon", "todo-tool", "google-maps"];
+export const featuredSlugs = ["picon", "co-us", "google-maps"];
 
 export function getProject(slug: string): Project | undefined {
   return projects.find((project) => project.slug === slug);
