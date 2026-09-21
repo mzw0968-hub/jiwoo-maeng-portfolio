@@ -60,7 +60,7 @@ export function ProjectCard({
               loop
               playsInline
               preload="none"
-              className="h-full w-full object-cover transition-transform transition-base group-hover:scale-[1.3]"
+              className="h-full w-full object-cover transition-transform transition-base group-hover:scale-[1.1]"
             />
           ) : project.thumbnail ? (
             <Image
@@ -69,7 +69,7 @@ export function ProjectCard({
               fill
               priority={priority}
               sizes="(min-width: 1280px) 600px, (min-width: 768px) 50vw, 100vw"
-              className="object-cover transition-transform transition-base group-hover:scale-[1.3]"
+              className="object-cover transition-transform transition-base group-hover:scale-[1.1]"
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center">
@@ -77,6 +77,15 @@ export function ProjectCard({
                 {t(ui.noImage)}
               </span>
             </div>
+          )}
+
+          {/* 호버 시 아주 옅은 딤. 플레이스홀더에는 걸지 않는다 —
+              회색 면을 더 어둡게 만들어봐야 의미가 없다. */}
+          {(project.video || project.thumbnail) && (
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-ink/0 transition-colors transition-base group-hover:bg-ink/10"
+            />
           )}
         </div>
 
