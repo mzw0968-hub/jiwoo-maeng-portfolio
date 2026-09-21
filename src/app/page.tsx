@@ -9,6 +9,7 @@ import { ui } from "@/data/ui";
 import { FadeUp } from "@/components/FadeUp";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SectionTitle } from "@/components/SectionTitle";
+import { SpotlightText } from "@/components/SpotlightText";
 import { ToolLogo } from "@/components/ToolLogo";
 
 const featured = featuredSlugs
@@ -30,8 +31,10 @@ export default function HomePage() {
       >
         <FadeUp>
           {/* 헤드라인은 두 언어 모드 공통으로 영문을 유지한다 (PRD 5.1) */}
-          <h1 className="text-display mx-auto max-w-[16ch] text-balance">
-            {site.headline}
+          <h1 className="text-display mx-auto max-w-[16ch]">
+            <SpotlightText className="text-balance">
+              {site.headline}
+            </SpotlightText>
           </h1>
           <p className="text-body text-ink-muted mx-auto mt-8 max-w-[52ch] text-pretty">
             {t(site.tagline)}
