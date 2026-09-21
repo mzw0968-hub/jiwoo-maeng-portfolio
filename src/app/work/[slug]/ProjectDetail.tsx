@@ -84,23 +84,7 @@ export function ProjectDetail({ project }: { project: Project }) {
           카드에서 본 장면을 상세에서 또 보여줄 이유가 없다.
           파일이 없으면 회색 플레이스홀더가 자리를 지킨다. */}
       <FadeUp>
-        {project.video ? (
-          <div
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-md bg-surface"
-            style={{ marginTop: "var(--space-block)" }}
-          >
-            <video
-              src={project.video}
-              poster={project.cover?.src}
-              controls
-              muted
-              loop
-              playsInline
-              preload="none"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        ) : project.cover ? (
+        {project.cover ? (
           /* 비율을 자르지 않는다. 케이스 스터디 이미지는 세로로 아주 길 수
              있고, 고정 비율 박스에 넣으면 대부분이 잘려 나간다. */
           <div
@@ -130,6 +114,30 @@ export function ProjectDetail({ project }: { project: Project }) {
           </div>
         )}
       </FadeUp>
+
+      {/* 시연 영상. 상세 이미지를 대체하지 않고 그 아래에 붙는다. */}
+      {project.video && (
+        <FadeUp>
+          <div
+            className="w-full overflow-hidden rounded-md bg-surface"
+            style={{
+              marginTop: "var(--space-media)",
+              aspectRatio: `${project.video.width} / ${project.video.height}`,
+            }}
+          >
+            <video
+              src={project.video.src}
+              poster={project.video.poster}
+              controls
+              muted
+              loop
+              playsInline
+              preload="none"
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </FadeUp>
+      )}
 
       <div
         className="flex flex-col"

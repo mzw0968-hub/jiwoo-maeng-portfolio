@@ -27,6 +27,15 @@ export type ProjectImage = {
   height: number;
 };
 
+export type ProjectVideo = {
+  src: string;
+  /** 원본 픽셀 크기. 비율대로 자리를 잡아 레이아웃이 밀리지 않게 한다. */
+  width: number;
+  height: number;
+  /** 재생 전에 보여줄 정지 이미지 (선택) */
+  poster?: string;
+};
+
 export type ProjectLink = {
   label: LocalizedText;
   url: string;
@@ -66,8 +75,11 @@ export type Project = {
    * 그래서 크기를 함께 적는다. 미리 알아야 레이아웃이 밀리지 않는다.
    */
   cover?: ProjectImage;
-  /** 카드·상세에서 자동 재생할 영상. 뷰포트에 들어올 때만 재생한다. */
-  video?: string;
+  /**
+   * 시연 영상. 상세 페이지에서 cover 이미지 **아래에** 붙는다.
+   * 카드에서는 썸네일이 없을 때만 쓰인다.
+   */
+  video?: ProjectVideo;
   links?: ProjectLink[];
   body: ProjectBody;
 };

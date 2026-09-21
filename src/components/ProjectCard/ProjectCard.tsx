@@ -51,18 +51,9 @@ export function ProjectCard({
       <Link href={`/work/${project.slug}`} className="group block">
         {/* 비율을 고정해 파일이 없어도 레이아웃이 흔들리지 않는다. */}
         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md bg-surface">
-          {project.video ? (
-            <video
-              ref={videoRef}
-              src={project.video}
-              poster={project.thumbnail}
-              muted
-              loop
-              playsInline
-              preload="none"
-              className="h-full w-full object-cover transition-transform transition-base group-hover:scale-[1.1]"
-            />
-          ) : project.thumbnail ? (
+          {/* 썸네일이 영상보다 우선한다. 썸네일은 클릭 전 카드 전용이고,
+              영상은 상세에서 보여주는 것이 기본이다. */}
+          {project.thumbnail ? (
             <Image
               src={project.thumbnail}
               alt={t(project.title)}
@@ -70,6 +61,17 @@ export function ProjectCard({
               priority={priority}
               sizes="(min-width: 1280px) 600px, (min-width: 768px) 50vw, 100vw"
               className="object-cover transition-transform transition-base group-hover:scale-[1.1]"
+            />
+          ) : project.video ? (
+            <video
+              ref={videoRef}
+              src={project.video.src}
+              poster={project.video.poster}
+              muted
+              loop
+              playsInline
+              preload="none"
+              className="h-full w-full object-cover transition-transform transition-base group-hover:scale-[1.1]"
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center">
