@@ -191,8 +191,8 @@ export const projects: Project[] = [
     ],
     body: {
       problem: {
-        ko: "청각장애인은 오프라인 대화에서 상대의 입모양을 보고 말을 유추합니다. 화자가 여러 명이 되면 시선을 옮기는 사이 맥락이 끊기고, 입모양만으로 대화를 따라가기 어려워집니다. 그렇게 오프라인 만남 자체를 피하게 되는 문제를 해결하고자 했습니다.",
-        en: "People with hearing impairments follow an in-person conversation by reading the speaker's lips. Once several people are talking, the thread breaks while their eyes move between speakers, and lip-reading alone stops being enough to keep up. What follows is that they start avoiding in-person meetings altogether — that is the problem we set out to solve.",
+        ko: "청각장애인은 오프라인 대화에서 상대의 입모양을 보고 말을 유추합니다. 화자가 여러 명이 되면 시선을 옮기는 사이 맥락이 끊기고, 입모양만으로 대화를 따라가기 어려워집니다. 이런 경험이 반복되면 대화에 참여하는 것 자체가 부담이 되고, 결국 여럿이 모이는 오프라인 만남을 피하게 됩니다. 저희는 이 문제를 “듣지 못해서”가 아니라 “대화의 흐름을 따라갈 수단이 없어서” 생기는 문제로 정의했습니다.",
+        en: "People with hearing impairments follow an in-person conversation by reading the speaker's lips. Once several people are talking, the thread breaks while their eyes move between speakers, and lip-reading alone stops being enough to keep up. When that happens often enough, taking part in a conversation becomes a burden in itself, and group gatherings are the first thing to go. We defined this not as a problem of “not being able to hear”, but of “having no way to follow the flow of a conversation”.",
       },
       process: {
         ko: "팀원 3명과 3개월 동안 진행했습니다. 실제 사용자 조사에서 출발해 앱 디자인과 프로토타이핑까지 마쳤습니다.",
