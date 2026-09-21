@@ -39,7 +39,7 @@ export function ProjectDetail({ project }: { project: Project }) {
 
   return (
     <article
-      className="container-page"
+      className="container-detail"
       style={{
         paddingTop: "var(--space-section)",
         paddingBottom: "var(--space-section)",

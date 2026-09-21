@@ -52,6 +52,8 @@
 
   /* --- 레이아웃 -------------------------------------------------------- */
   --container-page: 80rem; /* 1280px */
+  /* 상세 페이지 본문 폭. 다른 페이지(--container-page)보다 넓다. */
+  --container-detail: 90rem; /* 1440px */
   /* 상세 페이지 이미지·영상 폭. 이 값이 사진의 실제 렌더링 폭이다. */
   --container-media: 61.25rem; /* 980px */
 
@@ -131,8 +133,18 @@ body {
   padding-inline: var(--gutter);
 }
 
+/* 상세 페이지 전용 컨테이너. 본문을 다른 페이지보다 넓게 쓴다.
+   좌우 여백을 더해 최대 폭을 잡으므로 안쪽 콘텐츠가 정확히
+   --container-detail 폭이 된다. */
+.container-detail {
+  width: 100%;
+  max-width: calc(var(--container-detail) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
 /* 상세 페이지의 이미지·영상 폭. 본문 컬럼 안에서 가운데로 좁힌다.
-   바깥 여백은 부모(.container-page)가 이미 잡고 있으므로 건드리지 않는다. */
+   바깥 여백은 부모 컨테이너가 이미 잡고 있으므로 건드리지 않는다. */
 .media-column {
   width: 100%;
   max-width: var(--container-media);
