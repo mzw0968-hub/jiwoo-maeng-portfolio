@@ -72,13 +72,19 @@ export default function HomePage() {
           />
         </FadeUp>
 
+        {/* 한 줄 나열. 모바일은 1열, 태블릿 2열, 데스크톱에서 전부 한 줄로 편다. */}
         <div
-          className="mt-12 grid gap-x-8 gap-y-16 md:grid-cols-2"
-          style={{ rowGap: "var(--space-section)" }}
+          className="mt-12 grid gap-x-6 sm:grid-cols-2 lg:grid-cols-4"
+          style={{ rowGap: "var(--space-block)" }}
         >
           {featured.map((project, index) => (
             <FadeUp key={project.slug} delay={index * 0.06}>
-              <ProjectCard project={project} priority={index === 0} />
+              <ProjectCard
+                project={project}
+                priority={index === 0}
+                /* 데스크톱에서 4열이라 카드 폭이 300px 남짓이다. */
+                sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
+              />
             </FadeUp>
           ))}
         </div>

@@ -11,6 +11,7 @@ import type { ProjectCardProps } from "./ProjectCard.types";
 export function ProjectCard({
   project,
   priority = false,
+  sizes = "(min-width: 1280px) 600px, (min-width: 768px) 50vw, 100vw",
   className = "",
 }: ProjectCardProps) {
   const { t } = useLocale();
@@ -59,7 +60,7 @@ export function ProjectCard({
               alt={t(project.title)}
               fill
               priority={priority}
-              sizes="(min-width: 1280px) 600px, (min-width: 768px) 50vw, 100vw"
+              sizes={sizes}
               className="object-cover transition-transform transition-base group-hover:scale-[1.1]"
             />
           ) : project.video ? (
