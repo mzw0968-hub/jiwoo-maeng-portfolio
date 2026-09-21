@@ -27,6 +27,7 @@ export const projects: Project[] = [
     },
     period: "2 Days",
     tools: ["Codex"],
+    thumbnail: "/projects/todo-tool/cover.png",
     body: {
       problem: {
         ko: "대학생은 수업, 과제, 시험과 개인 일정이 동시에 쌓이지만, 실제로 사용할 수 있는 시간과 업무 소요 시간을 정확히 계산하기 어렵습니다. 기존 To-Do 서비스는 해야 할 일과 마감일을 기록하는 데 집중되어 있어, “완성도를 유지하려면 언제부터 시작해야 하는가”를 직접 판단해야 한다는 불편함이 있었습니다. 이를 해결하기 위해 가용시간과 고정 일정을 반영해 실행 시점을 제안하는 To-Do Tools를 만들었습니다.",
