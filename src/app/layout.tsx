@@ -4,7 +4,16 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
 
+/**
+ * Vercel이 주입하는 프로덕션 도메인을 쓴다. 배포 주소를 코드에 박지 않으므로
+ * 도메인이 바뀌어도 고칠 곳이 없다. 로컬에서는 localhost로 떨어진다.
+ */
+const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "http://localhost:3000";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "맹지우 Jiwoo Maeng — AX Designer",
     template: "%s — 맹지우 Jiwoo Maeng",
@@ -14,12 +23,19 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ko_KR",
+    url: siteUrl,
     siteName: "맹지우 Jiwoo Maeng",
     title: "맹지우 Jiwoo Maeng — AX Designer",
     description:
       "From AI capability to human experience. 기술의 가능성을 사람 중심의 제품 경험으로 연결합니다.",
   },
-  // metadataBase와 OG 이미지는 Vercel 배포 URL이 정해지는 5단계에서 채운다.
+  twitter: {
+    card: "summary_large_image",
+    title: "맹지우 Jiwoo Maeng — AX Designer",
+    description:
+      "From AI capability to human experience. 기술의 가능성을 사람 중심의 제품 경험으로 연결합니다.",
+  },
+  // OG 이미지는 app/opengraph-image.tsx 가 자동으로 붙인다.
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
