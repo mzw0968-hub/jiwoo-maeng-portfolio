@@ -49,10 +49,13 @@ export default function HomePage() {
             {toolkit.map((tool) => (
               <li
                 key={tool.name}
-                className="flex w-20 flex-col items-center gap-3"
+                className="flex flex-col items-center gap-3"
               >
                 <ToolLogo name={tool.name} src={tool.logo} />
-                <span className="text-caption text-center">{tool.name}</span>
+                {/* 도구 이름은 줄바꿈하지 않는다. "Claude Code"가 두 줄로 쪼개지면 읽기 나쁘다. */}
+                <span className="text-caption whitespace-nowrap">
+                  {tool.name}
+                </span>
               </li>
             ))}
           </ul>

@@ -319,7 +319,7 @@ docs/               PRD.md, DESIGN_SYSTEM.md
 ### 10.2 배포 (5단계에서 실행)
 
 1. `npm run build` 무에러 통과 확인
-2. GitHub 저장소 생성 후 푸시 — 이름 **`jiwoo-maeng-portfolio`**, **Public**
+2. GitHub 저장소 생성 후 푸시 — 계정 **`mzw0968-hub`**, 저장소 이름 **`jiwoo-maeng-portfolio`**, **Public**
    - **현재 이 PC에 `gh` CLI가 설치되어 있지 않음.** 설치하거나, 웹에서 저장소를 만들고 푸시하는 절차를 안내한다 (Q7)
 3. **Vercel 연결은 사용자가 직접 수행** — vercel.com → Add New → Project → 저장소 선택 → Deploy
    - 예상 설정: Framework `Next.js` 자동 감지, Build Command `npm run build`, 환경 변수 불필요
@@ -434,8 +434,8 @@ docs/               PRD.md, DESIGN_SYSTEM.md
 파일 추가 전까지 (a) 버튼 숨김 **(권장)** / (b) "준비 중" 비활성
 
 **Q7. GitHub (5단계, 사용자 직접 작업 필요)**
-- GitHub 계정 사용자명
-- `gh` CLI 미설치 상태입니다: (a) 설치 후 CLI로 생성·푸시 / (b) 웹에서 저장소 생성 후 제가 푸시 명령어 안내
+- GitHub 계정 사용자명: **`mzw0968-hub`** (확정)
+- `gh` CLI 미설치 상태입니다: (a) 설치 후 CLI로 생성·푸시 / (b) 웹에서 저장소 생성 후 제가 푸시 명령어 안내 — **미정**
 
 ---
 
