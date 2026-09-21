@@ -34,13 +34,14 @@ export type Tool = {
 };
 
 export const toolkit: Tool[] = [
-  { name: "Figma" }, // 내장 로고
+  { name: "Figma" },
   { name: "Figma Make" },
-  { name: "Claude Code" }, // 내장 로고
+  { name: "Claude Code" },
   { name: "Codex" },
-  { name: "Gemini" }, // 내장 로고
+  { name: "Gemini" },
   { name: "Grok Bot" },
-  { name: "Antigravity" },
+  // 유일하게 벡터 원본이 없어 PNG를 마스크로 쓴다. SVG를 구하면 교체할 것.
+  { name: "Antigravity", logo: "/logos/antigravity.png" },
   { name: "Photoshop" },
   { name: "Illustrator" },
 ];
