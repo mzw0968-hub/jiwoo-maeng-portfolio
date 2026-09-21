@@ -19,6 +19,14 @@ export type ProjectCategory = "ui-ai" | "branding";
 
 export type ProjectStatus = "done" | "wip";
 
+export type ProjectImage = {
+  /** public/ 기준 경로 */
+  src: string;
+  /** 원본 픽셀 크기. 비율을 계산해 자리를 미리 잡는 데 쓴다. */
+  width: number;
+  height: number;
+};
+
 export type ProjectLink = {
   label: LocalizedText;
   url: string;
@@ -50,8 +58,14 @@ export type Project = {
    * 없으면 회색 플레이스홀더를 렌더링한다.
    */
   thumbnail?: string;
-  /** 상세 페이지 상단 이미지. 없으면 회색 플레이스홀더를 렌더링한다. */
-  cover?: string;
+  /**
+   * 상세 페이지 상단 이미지. 없으면 회색 플레이스홀더를 렌더링한다.
+   *
+   * 비율을 자르지 않고 원본 그대로 보여준다 — 케이스 스터디처럼
+   * 세로로 긴 이미지를 16:9로 잘라버리면 내용이 사라진다.
+   * 그래서 크기를 함께 적는다. 미리 알아야 레이아웃이 밀리지 않는다.
+   */
+  cover?: ProjectImage;
   /** 카드·상세에서 자동 재생할 영상. 뷰포트에 들어올 때만 재생한다. */
   video?: string;
   links?: ProjectLink[];

@@ -84,14 +84,14 @@ export function ProjectDetail({ project }: { project: Project }) {
           카드에서 본 장면을 상세에서 또 보여줄 이유가 없다.
           파일이 없으면 회색 플레이스홀더가 자리를 지킨다. */}
       <FadeUp>
-        <div
-          className="relative aspect-[16/9] w-full overflow-hidden rounded-md bg-surface"
-          style={{ marginTop: "var(--space-block)" }}
-        >
-          {project.video ? (
+        {project.video ? (
+          <div
+            className="relative aspect-[16/9] w-full overflow-hidden rounded-md bg-surface"
+            style={{ marginTop: "var(--space-block)" }}
+          >
             <video
               src={project.video}
-              poster={project.cover}
+              poster={project.cover?.src}
               controls
               muted
               loop
@@ -99,23 +99,36 @@ export function ProjectDetail({ project }: { project: Project }) {
               preload="none"
               className="h-full w-full object-cover"
             />
-          ) : project.cover ? (
+          </div>
+        ) : project.cover ? (
+          /* 비율을 자르지 않는다. 케이스 스터디 이미지는 세로로 아주 길 수
+             있고, 고정 비율 박스에 넣으면 대부분이 잘려 나간다. */
+          <div
+            className="w-full overflow-hidden rounded-md bg-surface"
+            style={{ marginTop: "var(--space-block)" }}
+          >
             <Image
-              src={project.cover}
+              src={project.cover.src}
               alt={t(project.title)}
-              fill
+              width={project.cover.width}
+              height={project.cover.height}
               priority
               sizes="(min-width: 1280px) 1200px, 100vw"
-              className="object-cover"
+              className="h-auto w-full"
             />
-          ) : (
+          </div>
+        ) : (
+          <div
+            className="relative aspect-[16/9] w-full overflow-hidden rounded-md bg-surface"
+            style={{ marginTop: "var(--space-block)" }}
+          >
             <div className="flex h-full w-full items-center justify-center">
               <span className="text-caption text-ink-muted">
                 {t(ui.noImage)}
               </span>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </FadeUp>
 
       <div

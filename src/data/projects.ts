@@ -73,9 +73,14 @@ export const projects: Project[] = [
     period: "7 Days",
     tools: ["Figma", "Codex"],
     thumbnail: "/projects/google-maps/thumbnail.png",
-    // 상세 상단에 쓸 영상. 파일을 넣고 주석을 풀면 자동 재생된다.
+    // 세로로 아주 긴 케이스 스터디 이미지. 비율을 자르지 않고 그대로 보여준다.
+    cover: {
+      src: "/projects/google-maps/cover.png",
+      width: 1920,
+      height: 12100,
+    },
+    // 상세 상단에 쓸 영상. 파일을 넣고 주석을 풀면 cover 대신 영상이 나온다.
     // video: "/projects/google-maps/preview.mp4",
-    // cover: "/projects/google-maps/cover.png",
     body: {
       problem: {
         ko: "일본 여행 중 Google Maps에서 길을 찾다가, 지도에 이름이 표시되지 않은 건물의 정보를 확인하기 위해 앱을 나와 별도로 GPT를 실행해야 했습니다. 장소를 보고 있던 맥락이 끊기고 추가 탐색이 발생하는 문제를 발견해, 선택한 장소에서 바로 AI에게 질문할 수 있는 경험을 제안했습니다.",
