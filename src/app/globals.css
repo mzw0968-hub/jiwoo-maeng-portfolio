@@ -135,6 +135,19 @@ body {
   }
 }
 
+/* 모션 토큰을 클래스로 노출한다. Tailwind는 --duration-* / --ease-* 에서
+   유틸리티를 자동 생성하지 않으므로, 컴포넌트가 임의값을 쓰지 않도록 여기서 만든다.
+   transition 속성 지정은 Tailwind의 transition-colors 등과 함께 쓴다. */
+.transition-fast {
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-out-soft);
+}
+
+.transition-base {
+  transition-duration: var(--duration-base);
+  transition-timing-function: var(--ease-out-soft);
+}
+
 /* ==========================================================================
    모션 — 접근성 대응
    스크롤 페이드업 등 모든 애니메이션은 이 설정을 존중해야 한다.
