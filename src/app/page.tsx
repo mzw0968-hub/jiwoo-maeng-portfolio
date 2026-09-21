@@ -79,6 +79,8 @@ export default function HomePage() {
         */}
         <DragScroller
           label={t(ui.selectedWorkTitle)}
+          /* 두 번째 카드를 화면 정중앙에 놓고 시작한다. */
+          centerIndex={1}
           className="bleed-row mt-12"
         >
           <div className="flex" style={{ gap: "var(--space-block)" }}>
@@ -88,7 +90,10 @@ export default function HomePage() {
                 delay={index * 0.06}
                 className="shrink-0"
               >
-                <div style={{ width: "var(--card-featured)" }}>
+                <div
+                  data-scroll-item
+                  style={{ width: "var(--card-featured)" }}
+                >
                   <ProjectCard
                     project={project}
                     priority={index === 0}

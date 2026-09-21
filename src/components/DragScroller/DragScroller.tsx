@@ -1,6 +1,11 @@
 "use client";
 
-import { useRef, type PointerEvent, type MouseEvent } from "react";
+import {
+  useEffect,
+  useRef,
+  type PointerEvent,
+  type MouseEvent,
+} from "react";
 import type { DragScrollerProps } from "./DragScroller.types";
 
 /** 이 거리를 넘겨야 드래그로 친다. 손떨림으로 링크가 막히면 안 된다. */
@@ -18,11 +23,32 @@ const DRAG_THRESHOLD = 4;
 export function DragScroller({
   children,
   label,
+  centerIndex,
   className = "",
   style,
 }: DragScrollerProps) {
   const ref = useRef<HTMLDivElement>(null);
   const drag = useRef({ active: false, startX: 0, startLeft: 0, moved: false });
+
+  /**
+   * 지정한 항목을 화면 정중앙에 놓고 시작한다.
+   *
+   * offsetLeft 대신 화면상의 실제 위치를 재서 계산한다 — offsetLeft는
+   * 기준이 되는 조상 요소에 따라 값이 달라져 어긋날 수 있다.
+   */
+  useEffect(() => {
+    if (centerIndex === undefined) return;
+    const el = ref.current;
+    if (!el) return;
+
+    const items = el.querySelectorAll<HTMLElement>("[data-scroll-item]");
+    const target = items[centerIndex];
+    if (!target) return;
+
+    const box = el.getBoundingClientRect();
+    const item = target.getBoundingClientRect();
+    el.scrollLeft += item.left + item.width / 2 - (box.left + box.width / 2);
+  }, [centerIndex]);
 
   const onPointerDown = (event: PointerEvent<HTMLDivElement>) => {
     if (event.pointerType !== "mouse") return;
