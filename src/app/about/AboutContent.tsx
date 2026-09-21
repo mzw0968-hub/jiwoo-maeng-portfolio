@@ -99,9 +99,14 @@ export function AboutContent() {
                     {t(entry.period)}
                   </p>
                   <div className="mt-2 md:col-span-9 md:mt-0">
-                    <h3 className="text-h3 text-balance">{t(entry.title)}</h3>
+                    {/* break-keep: 한국어는 기본적으로 글자 사이 아무 데서나
+                        줄이 끊긴다. 띄어쓰기 단위로만 끊어 어절이 쪼개지지
+                        않게 한다. 공간이 있으면 자연히 한 줄로 들어간다. */}
+                    <h3 className="text-h3 break-keep text-balance">
+                      {t(entry.title)}
+                    </h3>
                     {entry.description && (
-                      <p className="text-body text-ink-muted mt-2 text-pretty">
+                      <p className="text-body text-ink-muted mt-2 break-keep text-pretty">
                         {t(entry.description)}
                       </p>
                     )}

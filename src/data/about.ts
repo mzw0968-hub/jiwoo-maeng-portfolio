@@ -79,8 +79,12 @@ export const timeline: TimelineEntry[] = [
   {
     period: { ko: "[기간]", en: "[Period]" },
     title: {
-      ko: "멘토링 특강 「남들과 다른 디자이너 되기 TIP」",
-      en: "Mentoring talk: “How to become a different kind of designer”",
+      ko: "멘토링 특강",
+      en: "Mentoring talk",
+    },
+    description: {
+      ko: "「남들과 다른 디자이너 되기 TIP」",
+      en: "“How to become a different kind of designer”",
     },
   },
 ];
