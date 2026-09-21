@@ -29,7 +29,7 @@ export const toolkit: string[] = [
   "Claude Code",
   "Codex",
   "Gemini",
-  "Grok",
+  "Grok Bot",
   "Antigravity",
   "Photoshop",
   "Illustrator",

@@ -1,10 +1,10 @@
-# 포트폴리오 웹사이트 PRD (v1.0)
+# 포트폴리오 웹사이트 PRD (v1.1)
 
 | 항목 | 내용 |
 |---|---|
 | 작성일 | 2026-09-21 |
 | 목표 공개일 | 2026-09-29 (D-8) |
-| 상태 | **확정 v1.0** — 잔여 미정 항목은 12번 참조 (4·5단계 진행 전까지 답하면 됨) |
+| 상태 | **확정 v1.1** — 잔여 미정 항목은 12번 참조 (4·5단계 진행 전까지 답하면 됨) |
 | 소유자 | 맹지우 / Jiwoo Maeng |
 
 ---
@@ -52,7 +52,7 @@
 | M1 | `npm run build`가 에러 없이 통과 | 빌드 로그 |
 | M2 | `tsc --noEmit` 타입 에러 0건 | 타입 체크 로그 |
 | M3 | Production URL이 **로그인·비밀번호 없이** 열림 | 시크릿 창에서 접속 확인 |
-| M4 | 6개 프로젝트 상세 페이지가 전부 렌더링 (플레이스홀더 포함) | 각 `/work/[slug]` 직접 접속 |
+| M4 | 5개 프로젝트 상세 페이지가 전부 렌더링 (플레이스홀더 포함) | 각 `/work/[slug]` 직접 접속 |
 | M5 | 모바일 375px에서 가로 스크롤 발생 0건 | 375 / 768 / 1280 / 1440px 확인 |
 | M6 | 하드코딩 컬러·간격 값 0건 (전부 토큰 참조) | `#`, `rgb(`, `bg-[` 패턴 검색 |
 | M7 | 링크 공유 시 OG 미리보기 정상 노출 | 메타 태그 확인 + 실제 공유 테스트 |
@@ -83,7 +83,7 @@
 ```
 /                     Home
 /work                 Work 목록 (필터: 전체 / UI·AI 구현 / 브랜딩·그래픽)
-/work/[slug]          Work 상세 (6건)
+/work/[slug]          Work 상세 (5건)
 /about                About
 /notes                Notes 목록
 /notes/[slug]         Notes 상세
@@ -91,7 +91,7 @@
 ```
 
 - 글로벌 내비게이션: Work / About / Notes / Contact (4개 고정) + **KOR/EN 토글**
-- 푸터: 전 페이지 공통, 큰 CTA + 연락처 링크
+- 푸터: 전 페이지 공통, "Contact" + 연락처 링크 + 메뉴
 - 404 페이지 제공
 - **언어는 URL에 반영하지 않는다** (11번 결정 참조)
 
@@ -105,9 +105,9 @@
 
 | # | 섹션 | 목적 (무엇을 납득시키는가) | 구성 |
 |---|---|---|---|
-| 1 | **Hero** | "이 사람이 뭐 하는 사람인지" 3초 안에 | 이름 + 헤드라인 + 서브 카피 |
-| 2 | **AI Toolkit** | 도구 폭이 넓고, 말만 하는 게 아님 | 가로 리스트: Figma, Figma Make, Claude Code, Codex, Gemini, Grok, Antigravity, Photoshop, Illustrator |
-| 3 | **Selected Work** | 결과물이 실제로 존재함 | 대표 프로젝트 카드 (큰 썸네일 또는 자동재생 영상 + 제목 + 카테고리 태그) |
+| 1 | **Hero** | "이 사람이 뭐 하는 사람인지" 3초 안에 | 헤드라인 + 서브 카피 (상단 이름 표기는 사용자 결정으로 삭제) |
+| 2 | **Design Skills** | 도구 폭이 넓고, 말만 하는 게 아님 | 가로 리스트: Figma, Figma Make, Claude Code, Codex, Gemini, Grok Bot, Antigravity, Photoshop, Illustrator |
+| 3 | **Projects** | 결과물이 실제로 존재함 | 대표 프로젝트 카드 (큰 썸네일 또는 자동재생 영상 + 제목 + 카테고리 태그) |
 | 4 | **Numbers** | 규모와 경험을 숫자로 압축 | 숫자 4개 — 값은 플레이스홀더, 사용자가 채움 |
 | 5 | **Notes 미리보기** | 생각의 깊이가 있음 | 최신 글 3개 카드 |
 | 6 | **Footer** | 연락 행동을 유도 | "Contact" 제목 + 이메일 + 메뉴·소셜 다단 |
@@ -118,7 +118,6 @@
 
 | | 한국어 모드 | 영어 모드 |
 |---|---|---|
-| 이름 | 맹지우 | Jiwoo Maeng |
 | **헤드라인** | From AI capability to human experience. | From AI capability to human experience. |
 | **서브 카피** | 기술의 가능성을 사람 중심의 제품 경험으로 연결합니다. | I turn what technology makes possible into product experiences built around people. |
 
@@ -215,7 +214,7 @@ body       {
            }
 ```
 
-### 6.3 초기 프로젝트 6건 (내용은 플레이스홀더, 구조만 완성)
+### 6.3 초기 프로젝트 5건 (내용은 플레이스홀더, 구조만 완성)
 
 | slug | 제목 | 카테고리 | 상태 | 비고 |
 |---|---|---|---|---|
@@ -224,7 +223,6 @@ body       {
 | `co-us` | CO-US | UI·AI 구현 | 진행 중 | 과정 중심으로 서술 |
 | (미정) | 3학년 과제 | 미정 | 완성 | 내용 추후. 임시 slug 제안: `year3-project` |
 | `grad-exhibition` | 졸업전시 브랜딩 | 브랜딩·그래픽 | 미정 | 로고·타이포·포스터·굿즈·도록 |
-| `la-olympics` | LA 올림픽 굿즈 브랜딩 | 브랜딩·그래픽 | 완성 | 동아리 프로젝트 |
 
 ### 6.4 에셋 규칙
 
@@ -425,7 +423,7 @@ docs/               PRD.md, DESIGN_SYSTEM.md
 초안: 다뤄 본 AI 엔진 수 / 직접 배포한 서비스 / 이끈 팀원 수 / 진행한 프로젝트 — 이 4개로 확정할까요? 값은 나중에 채워도 됩니다.
 
 **Q6. Work 미정 3건 (4단계)**
-- 홈 Selected Work에 노출할 프로젝트 몇 개, 어느 것인가요? (권장: 3개)
+- 홈 Projects 섹션에 노출할 프로젝트 몇 개, 어느 것인가요? (권장: 3개)
 - 3학년 과제의 slug·제목이 미정입니다. 임시 slug를 `year3-project`로 둘까요?
 - `grad-exhibition`의 상태는 완성인가요, 진행 중인가요?
 
@@ -447,3 +445,4 @@ docs/               PRD.md, DESIGN_SYSTEM.md
 |---|---|---|
 | 2026-09-21 | v0.1 | 초안 작성. Next.js 스캐폴딩 및 `git init` 완료 |
 | 2026-09-21 | **v1.0** | Q1~Q4·Q8 확정. **EN/KOR 다국어를 범위 밖 → 필수 요건으로 승격**(9번 신설), 콘텐츠 모델을 `LocalizedText` 기반으로 전면 수정, 폰트를 Pretendard 단독 → Switzer + Pretendard로 변경하고 한글 글리프 부재 검증 결과 기록(11번 신설). 성공 기준 M9·M10·S7 추가 |
+| 2026-09-21 | v1.1 | 사용자 결정 반영: LA 올림픽 굿즈 브랜딩 프로젝트 제외(5건으로 축소), 홈 섹션명 AI Toolkit → Design Skills / Selected Work → Projects, Hero 상단 이름 표기 삭제, 툴킷 Grok → Grok Bot |

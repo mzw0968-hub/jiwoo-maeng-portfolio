@@ -28,9 +28,8 @@ export default function HomePage() {
         }}
       >
         <FadeUp>
-          <p className="text-caption text-ink-muted">{t(site.name)}</p>
           {/* 헤드라인은 두 언어 모드 공통으로 영문을 유지한다 (PRD 5.1) */}
-          <h1 className="text-display mx-auto mt-6 max-w-[16ch] text-balance">
+          <h1 className="text-display mx-auto max-w-[16ch] text-balance">
             {site.headline}
           </h1>
           <p className="text-body text-ink-muted mx-auto mt-8 max-w-[52ch] text-pretty">

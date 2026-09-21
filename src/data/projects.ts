@@ -215,46 +215,9 @@ export const projects: Project[] = [
     },
   },
 
-  {
-    slug: "la-olympics",
-    title: {
-      ko: "LA 올림픽 굿즈 브랜딩",
-      en: "LA Olympics Merchandise Branding",
-    },
-    summary: {
-      ko: "[한 줄 요약을 채워주세요.]",
-      en: "[Add a one-line summary.]",
-    },
-    category: "branding",
-    status: "done",
-    role: {
-      ko: "제품 디자인 동아리 팀 리딩 · 브랜딩",
-      en: "Club Team Lead · Branding",
-    },
-    period: "[기간]",
-    tools: ["Illustrator", "Photoshop"],
-    body: {
-      problem: {
-        ko: "[어떤 과제였는지 적어주세요.]",
-        en: "[What the brief was.]",
-      },
-      process: {
-        ko: "[동아리 프로젝트로서 어떻게 진행했는지 적어주세요.]",
-        en: "[How the club project ran.]",
-      },
-      result: {
-        ko: "[굿즈 결과물을 적어주세요.]",
-        en: "[The merchandise outcome.]",
-      },
-      learnings: {
-        ko: "[배운 점 2~3줄.]",
-        en: "[Two or three lines on what you learned.]",
-      },
-    },
-  },
 ];
 
-/** 홈 Selected Work에 노출할 프로젝트. 순서도 이 배열을 따른다. */
+/** 홈 Projects 섹션에 노출할 프로젝트. 순서도 이 배열을 따른다. */
 export const featuredSlugs = ["todo-tool", "google-maps", "co-us"];
 
 export function getProject(slug: string): Project | undefined {
