@@ -44,8 +44,14 @@ export type Project = {
   period: string;
   /** 도구 이름은 고유명사라 번역하지 않는다. */
   tools: string[];
-  /** public/projects/[slug]/ 기준 경로. 없으면 회색 플레이스홀더를 렌더링한다. */
+  /**
+   * 목록·홈 카드에 쓰는 썸네일. **클릭 전 영역에만** 쓴다.
+   * 상세 페이지 상단은 cover를 쓰므로 둘은 다른 이미지다.
+   * 없으면 회색 플레이스홀더를 렌더링한다.
+   */
   thumbnail?: string;
+  /** 상세 페이지 상단 이미지. 없으면 회색 플레이스홀더를 렌더링한다. */
+  cover?: string;
   /** 카드·상세에서 자동 재생할 영상. 뷰포트에 들어올 때만 재생한다. */
   video?: string;
   links?: ProjectLink[];

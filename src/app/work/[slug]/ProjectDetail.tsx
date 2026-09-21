@@ -80,7 +80,9 @@ export function ProjectDetail({ project }: { project: Project }) {
         </dl>
       </FadeUp>
 
-      {/* 대표 이미지·영상. 파일이 없으면 회색 플레이스홀더가 자리를 지킨다. */}
+      {/* 상세 상단 이미지·영상. 썸네일과는 다른 이미지를 쓴다 —
+          카드에서 본 장면을 상세에서 또 보여줄 이유가 없다.
+          파일이 없으면 회색 플레이스홀더가 자리를 지킨다. */}
       <FadeUp>
         <div
           className="relative aspect-[16/9] w-full overflow-hidden rounded-md bg-surface"
@@ -89,7 +91,7 @@ export function ProjectDetail({ project }: { project: Project }) {
           {project.video ? (
             <video
               src={project.video}
-              poster={project.thumbnail}
+              poster={project.cover}
               controls
               muted
               loop
@@ -97,9 +99,9 @@ export function ProjectDetail({ project }: { project: Project }) {
               preload="none"
               className="h-full w-full object-cover"
             />
-          ) : project.thumbnail ? (
+          ) : project.cover ? (
             <Image
-              src={project.thumbnail}
+              src={project.cover}
               alt={t(project.title)}
               fill
               priority
