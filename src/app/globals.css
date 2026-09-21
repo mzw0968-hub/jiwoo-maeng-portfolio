@@ -73,6 +73,9 @@
   --space-block: clamp(1.5rem, 1rem + 2vw, 3rem); /* 블록 사이 */
   --space-media: 12.5rem; /* 상세 이미지와 시연 영상 사이 200px */
   --space-gallery: 6.25rem; /* 상세 이미지끼리의 간격 100px */
+  /* 홈 Selected Projects 카드 폭. 2열 그리드일 때의 크기를 유지한다.
+     좁은 화면에서는 뷰포트를 넘지 않게 줄어든다. */
+  --card-featured: min(35rem, 85vw);
 }
 
 @media (min-width: 768px) {

@@ -72,21 +72,40 @@ export default function HomePage() {
           />
         </FadeUp>
 
-        {/* 한 줄 나열. 모바일은 1열, 태블릿 2열, 데스크톱에서 전부 한 줄로 편다. */}
+        {/*
+          카드 크기를 줄이지 않고 한 줄로 나열한다. 화면을 넘치는 만큼은
+          가로로 스크롤한다 — 안 그러면 뒤쪽 카드에 닿을 방법이 없다.
+
+          좌우 여백만큼 음수 마진을 줘 화면 끝까지 흘러나가게 하고,
+          같은 크기의 패딩으로 첫 카드는 본문과 줄을 맞춘다.
+        */}
         <div
-          className="mt-12 grid gap-x-6 sm:grid-cols-2 lg:grid-cols-4"
-          style={{ rowGap: "var(--space-block)" }}
+          role="region"
+          aria-label={t(ui.selectedWorkTitle)}
+          tabIndex={0}
+          className="mt-12 overflow-x-auto"
+          style={{
+            marginInline: "calc(var(--gutter) * -1)",
+            paddingInline: "var(--gutter)",
+          }}
         >
-          {featured.map((project, index) => (
-            <FadeUp key={project.slug} delay={index * 0.06}>
-              <ProjectCard
-                project={project}
-                priority={index === 0}
-                /* 데스크톱에서 4열이라 카드 폭이 300px 남짓이다. */
-                sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
-              />
-            </FadeUp>
-          ))}
+          <div className="flex" style={{ gap: "var(--space-block)" }}>
+            {featured.map((project, index) => (
+              <FadeUp
+                key={project.slug}
+                delay={index * 0.06}
+                className="shrink-0"
+              >
+                <div style={{ width: "var(--card-featured)" }}>
+                  <ProjectCard
+                    project={project}
+                    priority={index === 0}
+                    sizes="(min-width: 640px) 560px, 85vw"
+                  />
+                </div>
+              </FadeUp>
+            ))}
+          </div>
         </div>
       </section>
 
