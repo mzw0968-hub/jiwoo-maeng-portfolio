@@ -199,12 +199,12 @@ export const projects: Project[] = [
         en: "I worked on this with three teammates over three months, from research through to prototyping.\n\nUser research: We interviewed three people with hearing impairments to find the hardest moments in a group conversation and the workarounds they already rely on.\n\nConcept: Picon AI saves contacts by voice and separates each speaker's text, so the conversation can be read back as a log.\n\nUI design: We designed the screen structure and information hierarchy around a single criterion — minimising eye movement during a conversation.\n\nPrototyping: We validated the core flow with a prototype built around a real conversation scenario.",
       },
       result: {
-        ko: "[결과물을 적어주세요.]",
-        en: "[The outcome.]",
+        ko: "Picon은 다자간 대화에서 청각장애인이 흐름을 놓치지 않고, 자신의 목소리로 대화에 참여할 수 있도록 돕는 앱입니다.\n\n나만의 캐릭터와 목소리: Picon 캐릭터와 AI 음성을 내 성격에 맞게 커스터마이징해, 대화 속에서 나를 표현하는 목소리를 만듭니다.\n\n화자 구분 자막: AI로 대화 상대의 목소리를 저장해 여러 명의 화자를 구분하고, 누가 한 말인지와 함께 텍스트로 보여줍니다. 시선을 옮기지 않아도 대화의 흐름을 따라갈 수 있습니다.\n\n새로운 목소리 알림: 주변에서 새로운 목소리가 감지되면 알림으로 알려, 누군가 말을 걸어오는 순간을 놓치지 않게 합니다.",
+        en: "Picon helps people with hearing impairments keep up with a group conversation and take part in it in a voice of their own.\n\nYour own character and voice: Customise the Picon character and its AI voice to match your personality, so you have a voice that represents you in the conversation.\n\nSpeaker-labelled captions: AI stores the voices of the people you are talking with, tells several speakers apart, and shows what was said as text along with who said it — so you can follow the conversation without moving your eyes.\n\nNew voice alerts: When a new voice is picked up nearby, Picon lets you know, so you never miss the moment someone starts talking to you.",
       },
       learnings: {
-        ko: "[배운 점 2~3줄.]",
-        en: "[Two or three lines on what you learned.]",
+        ko: "불편을 겪는 사용자를 직접 만나기 전까지는 문제를 절반만 이해하고 있었다는 것을 깨달았습니다. 조사를 통해 문제의 본질이 “소리”가 아니라 “대화의 흐름”에 있다는 것을 발견했고, 이 정의가 이후 모든 디자인 결정의 기준이 되었습니다. 소수의 사용자를 위한 디자인이 결국 모두에게 더 명확한 경험을 만든다는 것을 배웠습니다.",
+        en: "Until I sat down with the people actually living with the problem, I only understood half of it. The research showed that the heart of it is not “sound” but “the flow of a conversation”, and that definition became the standard for every design decision that followed. I learned that designing for a small group of users ends up making the experience clearer for everyone.",
       },
     },
   },
