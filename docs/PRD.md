@@ -260,7 +260,7 @@ body       {
 | 애니메이션 | Framer Motion (`motion` 패키지) | **절제해서 사용**. 2단계에서 설치 |
 | 콘텐츠 | `src/data/` (projects.ts, notes.ts, site.ts, ui.ts) | 단일 소스, 전부 `LocalizedText` |
 | 다국어 | React Context + `localStorage` | 11번 참조. 외부 라이브러리 없음 |
-| 폰트 | **Switzer (라틴) + Pretendard (한글)** | 13번 참조 |
+| 폰트 | **Switzer (라틴) + Pretendard (한글)** | 둘 다 CDN. 11번 참조 |
 | 이미지 | `next/image` | |
 | 배포 | GitHub + Vercel | 10번 참조 |
 
@@ -274,8 +274,7 @@ src/
   lib/              locale-context.tsx 등
   app/globals.css   토큰 정의 + @font-face
 public/
-  fonts/            Switzer / Pretendard woff2
-  projects/[slug]/  이미지·영상
+  projects/[slug]/  이미지·영상 (폰트는 CDN이라 저장소에 없음)
 docs/               PRD.md, DESIGN_SYSTEM.md
 ```
 
@@ -333,10 +332,14 @@ docs/               PRD.md, DESIGN_SYSTEM.md
 
 ### 11.1 확정 내용
 
-| 용도 | 폰트 | 출처 |
-|---|---|---|
-| **라틴 문자·숫자** | **Switzer** | 로컬 보유: `OneDrive/Desktop/폰트/Switzer_Complete/Fonts/WEB/fonts/*.woff2` |
-| **한글** | **Pretendard** | 다운로드 필요 |
+| 용도 | 폰트 | 조달 | 라이선스 |
+|---|---|---|---|
+| **라틴 문자·숫자** | **Switzer** | `api.fontshare.com` (파운드리 API) | Fontshare Free Font EULA |
+| **한글** | **Pretendard** | `cdn.jsdelivr.net` 동적 서브셋 | SIL OFL 1.1 |
+
+**폰트 파일은 저장소에 넣지 않는다.** Fontshare EULA 02조가 폰트 파일의 public server 업로드를 금지하며, 이 저장소는 public이다. 같은 EULA 서문이 제시하는 파운드리 API 경로를 쓴다. 결정 근거 상세는 `docs/DESIGN_SYSTEM.md` 6장.
+
+로드 웨이트는 **400 / 500 / 600 세 종**으로 제한한다 (보유 18종 중).
 
 ### 11.2 Switzer는 한글을 렌더링할 수 없다 — 검증 결과
 
@@ -361,8 +364,8 @@ docs/               PRD.md, DESIGN_SYSTEM.md
 --font-sans: "Switzer", "Pretendard", system-ui, sans-serif;
 ```
 
-- 필요한 웨이트만 선별해 `public/fonts/`에 `.woff2`로 넣는다 (전 웨이트 18종을 다 넣으면 용량 낭비)
-- `font-display: swap` + `next/font/local`로 FOUT 최소화
+- `font-display: swap`으로 FOUT 최소화, `preconnect`로 CDN 연결 지연 단축
+- 외부 CDN 두 곳에 의존한다. 장애 시 시스템 폰트로 폴백되고 레이아웃은 유지된다
 - **성공 기준 M10**: 한글이 폴백되지 않고 깨지는 지점이 0건이어야 한다
 
 ---

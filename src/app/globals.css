@@ -1,26 +1,152 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   디자인 토큰 — 단일 정의 지점
+   컴포넌트는 반드시 이 토큰만 참조한다. 하드코딩 값 사용 금지.
+   규칙 상세: docs/DESIGN_SYSTEM.md
+   ========================================================================== */
+
+@theme {
+  /* --- 컬러 ------------------------------------------------------------ */
+  --color-bg: #ffffff;
+  --color-surface: #f5f5f5;
+  --color-ink: #111111;
+  --color-ink-muted: #6b6b6b;
+  --color-line: #e5e5e5;
+  --color-accent: #0f7a5a;
+  --color-accent-hover: #0b5c43;
+
+  /* --- 폰트 ------------------------------------------------------------ */
+  /* Switzer는 라틴 전용(한글 글리프 없음)이므로 Pretendard가 한글을 받는다.
+     브라우저가 글리프 단위로 폴백하므로 한 문장에 섞여도 각각 맞게 렌더링된다. */
+  --font-sans: "Switzer", "Pretendard Variable", Pretendard, system-ui,
+    -apple-system, "Segoe UI", sans-serif;
+
+  /* --- 타이포 (6단계 상한 준수) ---------------------------------------- */
+  --text-display: clamp(2.5rem, 1.2rem + 6.5vw, 6rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.03em;
+  --text-display--font-weight: 600;
+
+  --text-h1: clamp(2rem, 1.2rem + 3.4vw, 3.5rem);
+  --text-h1--line-height: 1.1;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h1--font-weight: 600;
+
+  --text-h2: clamp(1.5rem, 1.1rem + 1.8vw, 2.25rem);
+  --text-h2--line-height: 1.2;
+  --text-h2--letter-spacing: -0.015em;
+  --text-h2--font-weight: 500;
+
+  --text-h3: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+  --text-h3--line-height: 1.35;
+  --text-h3--letter-spacing: -0.01em;
+  --text-h3--font-weight: 500;
+
+  --text-body: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+  --text-body--line-height: 1.7;
+
+  --text-caption: 0.875rem;
+  --text-caption--line-height: 1.5;
+  --text-caption--letter-spacing: 0.01em;
+
+  /* --- 레이아웃 -------------------------------------------------------- */
+  --container-page: 80rem; /* 1280px */
+
+  /* --- 라운드 ---------------------------------------------------------- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-full: 9999px;
+
+  /* --- 모션 ------------------------------------------------------------ */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 180ms;
+  --duration-base: 320ms;
+  --duration-slow: 600ms;
+}
+
+/* 시맨틱 간격 토큰 — @theme 밖에 두어 유틸리티를 생성하지 않고,
+   레이아웃 규칙에서 var()로만 참조한다. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --gutter: 1.25rem; /* 모바일 좌우 20px */
+  --space-section: clamp(4rem, 2rem + 8vw, 9rem); /* 섹션 사이 */
+  --space-block: clamp(1.5rem, 1rem + 2vw, 3rem); /* 블록 사이 */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@media (min-width: 768px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --gutter: 2.5rem;
   }
 }
 
+@media (min-width: 1280px) {
+  :root {
+    --gutter: 4rem;
+  }
+}
+
+/* ==========================================================================
+   베이스
+   ========================================================================== */
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 포커스 링은 항상 보이게 한다 (성공 기준 S4). 절대 outline:none 하지 않는다. */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* ==========================================================================
+   레이아웃 유틸리티
+   ========================================================================== */
+
+/* 페이지 폭 + 좌우 여백. 모든 섹션이 이 클래스를 쓴다. */
+.container-page {
+  width: 100%;
+  max-width: var(--container-page);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* 데스크톱 12컬럼 그리드. 모바일은 1컬럼으로 접힌다. */
+.grid-page {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-block);
+}
+
+@media (min-width: 768px) {
+  .grid-page {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+
+/* ==========================================================================
+   모션 — 접근성 대응
+   스크롤 페이드업 등 모든 애니메이션은 이 설정을 존중해야 한다.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
