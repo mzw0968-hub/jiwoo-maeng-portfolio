@@ -2,7 +2,13 @@ import type { LocalizedText, Note } from "@/lib/types";
 
 /**
  * Notes — AI 워크플로 인사이트 글.
- * 초기 3건은 제목과 요약만 있다. 본문은 채워지면 body에 추가한다.
+ *
+ * ⚠️ 현재 사이트에서 내려간 상태다. 글이 준비될 때까지 내비게이션,
+ * 홈 섹션, /notes 라우트를 모두 제거했다. 이 데이터는 되살릴 때
+ * 그대로 쓰려고 남겨둔다.
+ *
+ * 되살리는 법: src/data/ui.ts 의 nav 주석 해제 →
+ * 홈의 Notes 섹션 복구 → src/app/notes/ 라우트 복구 (git 이력에 있다).
  */
 
 export type NoteWithBody = Note & {

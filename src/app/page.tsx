@@ -1,10 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useLocale } from "@/lib/locale-context";
 import { numbers, site, toolkit } from "@/data/site";
 import { featuredSlugs, projects } from "@/data/projects";
-import { notes } from "@/data/notes";
 import { ui } from "@/data/ui";
 import { FadeUp } from "@/components/FadeUp";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -110,38 +108,9 @@ export default function HomePage() {
         </dl>
       </section>
 
-      {/* ── Notes 미리보기 ───────────────────────────────────────────────── */}
-      <section
-        className="container-page"
-        style={{ paddingTop: "var(--space-section)" }}
-      >
-        <FadeUp>
-          <SectionTitle
-            title={ui.notesTitle}
-            action={{ label: ui.viewAllWork, href: "/notes" }}
-          />
-        </FadeUp>
-
-        <ul className="mt-12 grid gap-x-8 gap-y-12 md:grid-cols-3">
-          {notes.slice(0, 3).map((note, index) => (
-            <li key={note.slug} className="border-t border-line pt-5">
-              <FadeUp delay={index * 0.06}>
-                <Link href={`/notes/${note.slug}`} className="group block">
-                  <h3 className="text-h3 group-hover:text-accent transition-colors transition-fast text-balance">
-                    {t(note.title)}
-                  </h3>
-                  <p className="text-body text-ink-muted mt-3 text-pretty">
-                    {t(note.summary)}
-                  </p>
-                  <span className="text-caption text-accent mt-5 inline-block underline underline-offset-4">
-                    {t(ui.readMore)}
-                  </span>
-                </Link>
-              </FadeUp>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {/* Notes 미리보기 섹션은 글이 준비될 때까지 내려둔다.
+          되살리려면 git 이력에서 이 자리의 섹션을 되돌리고,
+          data/ui.ts 의 nav 항목과 src/app/notes/ 라우트를 함께 복구한다. */}
     </>
   );
 }

@@ -85,12 +85,11 @@
 /work                 Work 목록 (필터: 전체 / UXUI·AI 구현 / 브랜딩·그래픽)
 /work/[slug]          Work 상세 (5건)
 /about                About
-/notes                Notes 목록
-/notes/[slug]         Notes 상세
 /contact              Contact
 ```
 
-- 글로벌 내비게이션: Work / About / Notes / Contact (4개 고정) + **KOR/EN 토글**
+- 글로벌 내비게이션: Work / About / Contact (3개) + **KOR/EN 토글**
+  - Notes는 글이 준비될 때까지 내려둔 상태 (5.5 참조)
 - 푸터: 전 페이지 공통, "Contact" + 연락처 링크 + 메뉴
 - 404 페이지 제공
 - **언어는 URL에 반영하지 않는다** (11번 결정 참조)
@@ -109,7 +108,7 @@
 | 2 | **Design Skills** | 도구 폭이 넓고, 말만 하는 게 아님 | 가로 리스트: Figma, Figma Make, Claude Code, Codex, Gemini, Grok Bot, Antigravity, Photoshop, Illustrator |
 | 3 | **Projects** | 결과물이 실제로 존재함 | 대표 프로젝트 카드 (큰 썸네일 또는 자동재생 영상 + 제목 + 카테고리 태그) |
 | 4 | **Numbers** | 규모와 경험을 숫자로 압축 | 숫자 4개 — 값은 플레이스홀더, 사용자가 채움 |
-| 5 | **Notes 미리보기** | 생각의 깊이가 있음 | 최신 글 3개 카드 |
+| ~~5~~ | ~~**Notes 미리보기**~~ | — | **내려둠.** 5.5 참조 |
 | 6 | **Footer** | 연락 행동을 유도 | "Contact" 제목 + 이메일 + 메뉴·소셜 다단 |
 
 > 초안에서는 "함께 일하고 싶다면" 류의 큰 CTA 문장을 두기로 했으나, 사용자 결정으로 **문장을 빼고 "Contact"만** 남겼다. 미니멀 에디토리얼 톤에서 설명 문장이 군더더기로 읽힌다는 판단.
@@ -159,9 +158,11 @@
   - 멘토링 특강 "남들과 다른 디자이너 되기 TIP"
 - 사용 도구와 활용 수준
 
-### 5.5 Notes — 생각을 판다.
+### 5.5 Notes — 생각을 판다. **(현재 내려둠)**
 
-초기 글 3개, 제목과 요약만 플레이스홀더:
+> 글이 준비되지 않아 사용자 결정으로 사이트에서 제거했다. 내비게이션·홈 섹션·`/notes` 라우트를 모두 내렸고, `src/data/notes.ts` 의 데이터는 되살릴 때 쓰려고 남겨뒀다. 복구 절차는 그 파일 주석에 적혀 있다.
+
+준비된 글 3건 (제목·요약만):
 
 1. "AI 엔진마다 성격이 다르다: Claude Code, Codex, Gemini, Grok 비교"
 2. "Grok Bot으로 AI 팀원 꾸리기"
@@ -446,5 +447,6 @@ docs/               PRD.md, DESIGN_SYSTEM.md
 |---|---|---|
 | 2026-09-21 | v0.1 | 초안 작성. Next.js 스캐폴딩 및 `git init` 완료 |
 | 2026-09-21 | **v1.0** | Q1~Q4·Q8 확정. **EN/KOR 다국어를 범위 밖 → 필수 요건으로 승격**(9번 신설), 콘텐츠 모델을 `LocalizedText` 기반으로 전면 수정, 폰트를 Pretendard 단독 → Switzer + Pretendard로 변경하고 한글 글리프 부재 검증 결과 기록(11번 신설). 성공 기준 M9·M10·S7 추가 |
+| 2026-09-22 | v1.3 | Notes를 사이트에서 내림 (글 미준비). 데이터와 복구 절차는 보존. Numbers 값 입력 |
 | 2026-09-21 | v1.2 | About 상단에 프로필 사진 블록 추가 (사용자 요청) |
 | 2026-09-21 | v1.1 | 사용자 결정 반영: LA 올림픽 굿즈 브랜딩 프로젝트 제외(5건으로 축소), 홈 섹션명 AI Toolkit → Design Skills / Selected Work → Projects, Hero 상단 이름 표기 삭제, 툴킷 Grok → Grok Bot |

@@ -8,7 +8,9 @@ import type { LocalizedText, ProjectCategory, ProjectStatus } from "@/lib/types"
 export const nav: { href: string; label: LocalizedText }[] = [
   { href: "/work", label: { ko: "Work", en: "Work" } },
   { href: "/about", label: { ko: "About", en: "About" } },
-  { href: "/notes", label: { ko: "Notes", en: "Notes" } },
+  // Notes는 글이 준비될 때까지 잠시 내려둔다. 되살리려면 이 줄과
+  // 홈의 Notes 섹션, src/app/notes/ 라우트를 함께 되돌리면 된다.
+  // { href: "/notes", label: { ko: "Notes", en: "Notes" } },
   { href: "/contact", label: { ko: "Contact", en: "Contact" } },
 ];
 
