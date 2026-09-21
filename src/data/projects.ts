@@ -162,10 +162,10 @@ export const projects: Project[] = [
     category: "ui-ai",
     status: "done",
     role: {
-      ko: "[역할]",
-      en: "[Role]",
+      ko: "기획 · 디자인 · 프로토타이핑",
+      en: "Product · Design · Prototyping",
     },
-    period: "[기간]",
+    period: "2025.09 ~ 2025.12",
     tools: ["Figma"],
     thumbnail: "/projects/picon/thumbnail.jpg",
     // 케이스 스터디 18장. 7번은 원본에 없다.
@@ -191,12 +191,12 @@ export const projects: Project[] = [
     ],
     body: {
       problem: {
-        ko: "[무엇이 불편했고 왜 시작했는지.]",
-        en: "[What was broken, and why you started.]",
+        ko: "청각장애인은 오프라인 대화에서 상대의 입모양을 보고 말을 유추합니다. 화자가 여러 명이 되면 시선을 옮기는 사이 맥락이 끊기고, 입모양만으로 대화를 따라가기 어려워집니다. 그렇게 오프라인 만남 자체를 피하게 되는 문제를 해결하고자 했습니다.",
+        en: "People with hearing impairments follow an in-person conversation by reading the speaker's lips. Once several people are talking, the thread breaks while their eyes move between speakers, and lip-reading alone stops being enough to keep up. What follows is that they start avoiding in-person meetings altogether — that is the problem we set out to solve.",
       },
       process: {
-        ko: "[과정을 적어주세요.]",
-        en: "[The process.]",
+        ko: "팀원 3명과 3개월 동안 진행했습니다. 실제 사용자 조사에서 출발해 앱 디자인과 프로토타이핑까지 마쳤습니다.",
+        en: "I worked on this with three teammates over three months. We started from research with actual users and carried it through to app design and prototyping.",
       },
       result: {
         ko: "[결과물을 적어주세요.]",
