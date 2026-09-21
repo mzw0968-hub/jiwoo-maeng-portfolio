@@ -83,7 +83,17 @@ export default function HomePage() {
           centerIndex={1}
           className="bleed-row mt-12"
         >
-          <div className="flex" style={{ gap: "var(--space-block)" }}>
+          {/*
+            w-max + mx-auto: 카드가 화면에 다 들어가면 가운데로 모이고,
+            넘치면 자동 여백이 0이 되어 정상적으로 스크롤된다.
+
+            justify-center를 쓰면 안 된다 — 넘칠 때 왼쪽으로 삐져나간
+            부분에 스크롤로 닿을 수 없게 된다.
+          */}
+          <div
+            className="mx-auto flex w-max"
+            style={{ gap: "var(--space-block)" }}
+          >
             {featured.map((project, index) => (
               <FadeUp
                 key={project.slug}
