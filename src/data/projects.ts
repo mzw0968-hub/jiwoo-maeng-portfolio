@@ -225,8 +225,8 @@ export const projects: Project[] = [
       ko: "컨셉팀장 · 로고 · 타이포 · 컬러 · 굿즈 · 도록 · 영상 · 포스터 총괄",
       en: "Concept Lead — logo, type, color, merchandise, catalogue, video, posters",
     },
-    period: "[기간]",
-    tools: ["Illustrator", "Photoshop"],
+    period: "2025.10 ~ 2026.12",
+    tools: ["Figma", "Photoshop", "Illustrator"],
     body: {
       problem: {
         ko: "[전시의 컨셉을 어떻게 정의했는지, 어떤 과제가 있었는지 적어주세요.]",
