@@ -109,7 +109,7 @@ export default function HomePage() {
                     priority={index === 0}
                     /* --card-featured와 같은 식. 카드 폭이 유동적이므로
                        고정값을 주면 필요보다 크거나 작은 이미지를 받는다. */
-                    sizes="(min-width: 640px) calc(20rem + 12.5vw), 85vw"
+                    sizes="(min-width: 640px) calc(17rem + 10.6vw), 72vw"
                   />
                 </div>
               </FadeUp>
