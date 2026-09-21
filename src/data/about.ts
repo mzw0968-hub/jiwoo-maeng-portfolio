@@ -37,8 +37,8 @@ export const collaboration: {
 } = {
   title: { ko: "협업 방식", en: "How I work with others" },
   body: {
-    ko: "명확한 언어로 전달하고, 상대의 핵심을 정확히 이해하는 것. 사람에게도 AI에게도 같은 원칙이 적용됩니다. 좋은 프롬프트는 결국 좋은 커뮤니케이션과 같은 문제였습니다.",
-    en: "Say things clearly, and understand what the other side actually means. The same principle applies to people and to AI. A good prompt turned out to be the same problem as good communication.",
+    ko: "저는 협업에서 가장 중요한 것은 커뮤니케이션이라고 생각합니다. 모호한 표현 대신 명확한 언어로 의도를 전달하고 팀원의 의사 전달을 정확히 이해하려 노력합니다. 팀원 각자의 성향과 강점을 파악해 역할을 나누고, 모두가 자신의 역량을 발휘할 수 있는 흐름을 만듭니다. 방향을 잡을 때는 유연하게 의견을 열어 두되, 한번 정한 프로세스와 기준은 엄격하게 지켜 완성도를 높입니다. 이 방식은 AI와 일할 때도 같아서, 사람에게든 AI에게든 명확하게 전달하는 습관이 팀 전체의 속도를 높인다고 믿습니다.",
+    en: "I think communication matters more than anything else in collaboration. I try to say what I mean in plain, specific language rather than vague phrasing, and to understand exactly what my teammates are telling me. I read each person's temperament and strengths, divide the roles accordingly, and build a flow where everyone can do what they are good at. While we are still settling on a direction I keep opinions open, but once a process and a standard are set I hold to them strictly — that is what lifts the quality. Working with AI is no different: the habit of saying things clearly, to a person or to a model, is what makes the whole team faster.",
   },
 };
 
