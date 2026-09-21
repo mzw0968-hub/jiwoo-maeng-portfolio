@@ -73,7 +73,7 @@ export function AboutContent() {
           <h2 className="text-caption text-ink-muted md:col-span-3">
             {t(collaboration.title)}
           </h2>
-          <p className="text-h3 mt-4 max-w-[46ch] text-pretty md:col-span-9 md:mt-0">
+          <p className="text-h3 mt-4 max-w-[46ch] break-keep text-pretty md:col-span-9 md:mt-0">
             {t(collaboration.body)}
           </p>
         </section>
