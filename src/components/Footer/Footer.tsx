@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useLocale } from "@/lib/locale-context";
 import { site, socials } from "@/data/site";
-import { ui } from "@/data/ui";
+import { nav, ui } from "@/data/ui";
 import type { FooterProps } from "./Footer.types";
 
 export function Footer({ className = "" }: FooterProps) {
@@ -21,34 +22,60 @@ export function Footer({ className = "" }: FooterProps) {
           paddingBottom: "var(--space-block)",
         }}
       >
-        {/* 줄바꿈을 사전에서 관리하므로 whitespace-pre-line으로 살린다. */}
-        <h2 className="text-h1 whitespace-pre-line text-balance">
-          {t(ui.footerHeadline)}
-        </h2>
+        <div className="grid gap-12 md:grid-cols-12">
+          {/* 연락처 — 푸터의 주인공 */}
+          <div className="md:col-span-7">
+            <h2 className="text-h1">{t(ui.footerHeadline)}</h2>
+            <a
+              href={`mailto:${site.email}`}
+              className="text-h3 text-accent hover:text-accent-hover mt-6 inline-block underline underline-offset-4 transition-colors transition-fast"
+            >
+              {site.email}
+            </a>
+          </div>
 
-        <a
-          href={`mailto:${site.email}`}
-          className="text-h3 text-accent hover:text-accent-hover mt-8 inline-block underline underline-offset-4 transition-colors transition-fast"
-        >
-          {site.email}
-        </a>
+          {/* 메뉴 */}
+          <nav aria-label="Footer" className="md:col-span-3">
+            <h3 className="text-caption text-ink-muted">
+              {t(ui.navGroupLabel)}
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {nav.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-body text-ink-muted hover:text-ink transition-colors transition-fast"
+                  >
+                    {t(item.label)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-        {socials.length > 0 && (
-          <ul className="mt-6 flex flex-wrap gap-6">
-            {socials.map((social) => (
-              <li key={social.url}>
-                <a
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-body text-ink-muted hover:text-ink transition-colors transition-fast"
-                >
-                  {social.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        )}
+          {/* 소셜 — URL이 없으면 블록 자체를 렌더링하지 않는다 */}
+          {socials.length > 0 && (
+            <div className="md:col-span-2">
+              <h3 className="text-caption text-ink-muted">
+                {t(ui.socialGroupLabel)}
+              </h3>
+              <ul className="mt-4 space-y-3">
+                {socials.map((social) => (
+                  <li key={social.url}>
+                    <a
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-body text-ink-muted hover:text-ink transition-colors transition-fast"
+                    >
+                      {social.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
 
         <p
           className="text-caption text-ink-muted border-t border-line pt-6"

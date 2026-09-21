@@ -19,6 +19,53 @@ export const site = {
   email: "mzw0968@gmail.com",
 };
 
+/**
+ * AI Toolkit — 홈에서 가로 한 줄로 늘어놓는다.
+ * 도구 이름은 고유명사라 번역하지 않는다.
+ */
+export const toolkit: string[] = [
+  "Figma",
+  "Figma Make",
+  "Claude Code",
+  "Codex",
+  "Gemini",
+  "Grok",
+  "Antigravity",
+  "Photoshop",
+  "Illustrator",
+];
+
+export type Stat = {
+  /** 값은 사용자가 채운다. 비어 있으면 — 로 표시된다. */
+  value: string;
+  label: LocalizedText;
+};
+
+export const numbers: Stat[] = [
+  {
+    value: "",
+    label: { ko: "다뤄 본 AI 엔진", en: "AI engines used" },
+  },
+  {
+    value: "",
+    label: { ko: "직접 배포한 서비스", en: "Services shipped" },
+  },
+  {
+    value: "",
+    label: { ko: "이끈 팀원", en: "People led" },
+  },
+  {
+    value: "",
+    label: { ko: "진행한 프로젝트", en: "Projects completed" },
+  },
+];
+
+/**
+ * 이력서 PDF. 파일을 public/ 에 넣고 경로를 채우면 버튼이 자동으로 나타난다.
+ * 비어 있으면 Contact 페이지가 버튼 자체를 렌더링하지 않는다. (PRD Q9)
+ */
+export const resumeUrl = "";
+
 export type SocialLink = {
   label: string;
   url: string;
