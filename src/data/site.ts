@@ -54,19 +54,20 @@ export type Stat = {
 
 export const numbers: Stat[] = [
   {
-    value: "",
+    value: "6",
     label: { ko: "다뤄 본 AI 엔진", en: "AI engines used" },
   },
   {
-    value: "",
+    value: "1",
     label: { ko: "직접 배포한 서비스", en: "Services shipped" },
   },
   {
-    value: "",
-    label: { ko: "이끈 팀원", en: "People led" },
+    // 팀원 수가 아니라 팀을 이끈 횟수다.
+    value: "8",
+    label: { ko: "팀 리딩", en: "Teams led" },
   },
   {
-    value: "",
+    value: "5",
     label: { ko: "진행한 프로젝트", en: "Projects completed" },
   },
 ];
