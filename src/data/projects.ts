@@ -29,24 +29,24 @@ export const projects: Project[] = [
     tools: ["Codex"],
     body: {
       problem: {
-        ko: "[무엇이 불편했고 왜 직접 만들기로 했는지 2~3문장으로 적어주세요.]",
-        en: "[What was broken, and why you decided to build it yourself. 2-3 sentences.]",
+        ko: "대학생은 수업, 과제, 시험과 개인 일정이 동시에 쌓이지만, 실제로 사용할 수 있는 시간과 업무 소요 시간을 정확히 계산하기 어렵습니다. 기존 To-Do 서비스는 해야 할 일과 마감일을 기록하는 데 집중되어 있어, “완성도를 유지하려면 언제부터 시작해야 하는가”를 직접 판단해야 한다는 불편함이 있었습니다. 이를 해결하기 위해 가용시간과 고정 일정을 반영해 실행 시점을 제안하는 To-Do Tools를 만들었습니다.",
+        en: "University students juggle classes, assignments, exams and personal commitments all at once, yet it is hard to work out how much time is actually free and how long each task will take. Existing to-do services concentrate on recording what needs doing and when it is due, leaving you to judge for yourself when you have to start in order to keep the quality up. To-Do Tools answers that question: it reads your available time and fixed commitments and suggests when to begin.",
       },
       process: {
-        ko: "[PRD → 디자인 시스템 → 와이어프레임 → Figma와 AI를 오가며 다듬기 → 구현 순서로, 실제로 거친 과정을 적어주세요.]",
-        en: "[Walk through the actual process: PRD, design system, wireframes, iterating between Figma and AI, then implementation.]",
+        ko: "초기 아이디어를 PRD로 구조화하는 작업에서 시작해 디자인 시스템 조사, React·Electron 화면 구현, 오류 분석, 테스트, Windows 설치 파일 패키징까지 개발 전반을 거쳤습니다.",
+        en: "The project ran through the full development cycle — structuring the initial idea into a PRD, researching the design system, building the React and Electron screens, debugging, testing, and packaging the Windows installer.",
       },
       aiWorkflow: {
-        ko: "[Codex를 어떤 작업에 썼는지, 프롬프트를 어떻게 설계했는지 적어주세요. 사용자 데이터 서버 구축과 앱 배포 경험이 여기 들어가면 좋습니다.]",
-        en: "[Which tasks you used Codex for and how you designed the prompts. The user-data server and app deployment work belongs here.]",
+        ko: "Codex를 개발 전반에 활용했습니다. 프롬프트는 한 번에 완성된 결과를 요구하기보다 “가용시간 설정”, “고정 일정”, “로컬 알림”처럼 기능을 작은 단위로 나누고, 직접 사용한 뒤 구체적인 피드백을 다시 전달하는 방식으로 설계했습니다. 또한 선택적으로 동의한 사용자의 익명 사용 통계와 피드백을 확인할 수 있도록 Cloudflare Workers와 D1 기반 서버, 관리자 대시보드를 구축했으며, 데이터베이스 연결, 서버 배포, 비밀번호 관리와 실제 HTTPS 요청 검증까지 Codex와 함께 진행했습니다.",
+        en: "Codex ran through the whole build. Rather than asking for a finished result in one shot, I designed prompts around small units of functionality — “available time settings”, “fixed commitments”, “local notifications” — then used each one myself and fed specific feedback back in. I also built a Cloudflare Workers and D1 server with an admin dashboard so I could review anonymous usage statistics and feedback from users who opted in, working through the database connection, server deployment, password handling and real HTTPS request verification with Codex.",
       },
       result: {
-        ko: "[최종 결과물과 실제 사용 경험을 적어주세요.]",
-        en: "[The final product and how it actually gets used.]",
+        ko: "주간 상세 계획, 마감 기반 시작 시점 안내, 고정 일정, 가용시간 설정, 작업 시간 기록, 로컬 알림, 시스템 트레이 실행과 3개월 캘린더를 갖춘 Windows 데스크톱 앱을 완성했습니다. 업무와 일정은 사용자의 컴퓨터에 저장되며, 익명 사용 통계와 피드백은 별도의 선택 동의가 있을 때만 서버로 전송됩니다. 최종 결과물은 README가 포함된 Windows 설치 파일로 배포할 수 있도록 구성했고, 앱을 종료하거나 다시 실행해도 데이터가 유지되는 실제 사용 환경까지 검증했습니다.",
+        en: "The result is a Windows desktop app with detailed weekly planning, deadline-based start-time guidance, fixed commitments, available-time settings, time tracking, local notifications, system tray operation and a three-month calendar. Tasks and schedules live on the user's own computer; anonymous usage statistics and feedback reach the server only with separate, explicit consent. It ships as a Windows installer with a README, and I verified in real use that data survives quitting and relaunching the app.",
       },
       learnings: {
-        ko: "[배운 점 2~3줄.]",
-        en: "[Two or three lines on what you learned.]",
+        ko: "AI를 활용한 개발에서는 한 번에 많은 기능을 요구하는 것보다 문제와 제약조건을 먼저 정의하고, 작은 단위로 구현과 검증을 반복하는 방식이 훨씬 효과적이라는 점을 배웠습니다. 또한 화면을 만드는 것만큼 데이터 저장, 개인정보 동의, 서버 운영과 배포 경험까지 함께 설계해야 하나의 서비스가 완성된다는 것을 경험했습니다. 무엇보다 직접 사용하며 남긴 구체적인 피드백이 초기 아이디어를 실제 제품에 가까운 결과로 발전시키는 데 가장 중요했습니다.",
+        en: "Building with AI, defining the problem and its constraints first and then implementing and verifying in small increments proved far more effective than asking for many features at once. I also learned that a service is not finished when the screens are — data storage, privacy consent, running a server and shipping a release all have to be designed alongside. Above all, the specific feedback I gathered from using the thing myself mattered most in turning an early idea into something close to a real product.",
       },
     },
     // links: [{ label: { ko: "서비스 열기", en: "Open the app" }, url: "[실제 링크]" }],
