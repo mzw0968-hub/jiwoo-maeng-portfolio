@@ -16,8 +16,8 @@ export const projects: Project[] = [
       en: "Productivity To-do Tool",
     },
     summary: {
-      ko: "[한 줄 요약을 채워주세요. 이 툴이 무엇을 해결하는지 한 문장으로.]",
-      en: "[Add a one-line summary: what this tool solves, in a single sentence.]",
+      ko: "적절한 시점에 업무를 시작해 마감까지 안정적으로 완수하도록 도와주는 생산성 도구",
+      en: "A productivity tool that helps you start work at the right moment and carry it through to the deadline.",
     },
     category: "ui-ai",
     status: "done",
@@ -25,8 +25,8 @@ export const projects: Project[] = [
       ko: "기획 · 디자인 · 구현 · 배포",
       en: "Product · Design · Development · Deployment",
     },
-    period: "[기간]",
-    tools: ["Figma", "Codex"],
+    period: "2 Days",
+    tools: ["Codex"],
     body: {
       problem: {
         ko: "[무엇이 불편했고 왜 직접 만들기로 했는지 2~3문장으로 적어주세요.]",
