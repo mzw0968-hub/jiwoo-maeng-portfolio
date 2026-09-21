@@ -74,11 +74,9 @@ export const projects: Project[] = [
     tools: ["Figma", "Codex"],
     thumbnail: "/projects/google-maps/thumbnail.png",
     // 세로로 아주 긴 케이스 스터디 이미지. 비율을 자르지 않고 그대로 보여준다.
-    cover: {
-      src: "/projects/google-maps/cover.png",
-      width: 1920,
-      height: 12100,
-    },
+    covers: [
+      { src: "/projects/google-maps/cover.png", width: 1920, height: 12100 },
+    ],
     // 시연 영상. 상세에서 cover 이미지 아래 200px 간격을 두고 붙는다.
     video: {
       src: "/projects/google-maps/demo.mp4",
@@ -152,14 +150,14 @@ export const projects: Project[] = [
   },
 
   {
-    slug: "year3-project",
+    slug: "picon",
     title: {
-      ko: "[3학년 과제 제목]",
-      en: "[Year 3 Project Title]",
+      ko: "Picon",
+      en: "Picon",
     },
     summary: {
-      ko: "[한 줄 요약을 채워주세요.]",
-      en: "[Add a one-line summary.]",
+      ko: "청각장애인을 위한 오프라인 소통 앱",
+      en: "An offline communication app for people with hearing impairments.",
     },
     category: "ui-ai",
     status: "done",
@@ -169,6 +167,28 @@ export const projects: Project[] = [
     },
     period: "[기간]",
     tools: ["Figma"],
+    thumbnail: "/projects/picon/thumbnail.jpg",
+    // 케이스 스터디 18장. 7번은 원본에 없다.
+    covers: [
+      { src: "/projects/picon/01.png", width: 1920, height: 1080 },
+      { src: "/projects/picon/02.png", width: 1920, height: 1440 },
+      { src: "/projects/picon/03.png", width: 1920, height: 1440 },
+      { src: "/projects/picon/04.png", width: 1920, height: 1440 },
+      { src: "/projects/picon/05.png", width: 1920, height: 1440 },
+      { src: "/projects/picon/06.png", width: 1920, height: 1440 },
+      { src: "/projects/picon/08.png", width: 1920, height: 1440 },
+      { src: "/projects/picon/09.png", width: 1920, height: 1440 },
+      { src: "/projects/picon/10.png", width: 1920, height: 1080 },
+      { src: "/projects/picon/11.png", width: 1920, height: 1080 },
+      { src: "/projects/picon/12.png", width: 1920, height: 1080 },
+      { src: "/projects/picon/13.png", width: 1920, height: 1080 },
+      { src: "/projects/picon/14.png", width: 1920, height: 1080 },
+      { src: "/projects/picon/15.png", width: 1920, height: 1080 },
+      { src: "/projects/picon/16.png", width: 1920, height: 1440 },
+      { src: "/projects/picon/17.png", width: 1920, height: 1080 },
+      { src: "/projects/picon/18.png", width: 1920, height: 1080 },
+      { src: "/projects/picon/19.png", width: 1920, height: 1440 },
+    ],
     body: {
       problem: {
         ko: "[무엇이 불편했고 왜 시작했는지.]",

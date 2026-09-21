@@ -72,6 +72,7 @@
   --space-section: clamp(4rem, 2rem + 8vw, 9rem); /* 섹션 사이 */
   --space-block: clamp(1.5rem, 1rem + 2vw, 3rem); /* 블록 사이 */
   --space-media: 12.5rem; /* 상세 이미지와 시연 영상 사이 200px */
+  --space-gallery: 6.25rem; /* 상세 이미지끼리의 간격 100px */
 }
 
 @media (min-width: 768px) {

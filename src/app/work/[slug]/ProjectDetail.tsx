@@ -35,6 +35,7 @@ function Block({
 export function ProjectDetail({ project }: { project: Project }) {
   const { t } = useLocale();
   const { previous, next } = getAdjacentProjects(project.slug);
+  const covers = project.covers ?? [];
 
   const meta: { label: LocalizedText; value: string }[] = [
     { label: ui.roleLabel, value: t(project.role) },
@@ -83,28 +84,41 @@ export function ProjectDetail({ project }: { project: Project }) {
       {/* 상세 상단 이미지·영상. 썸네일과는 다른 이미지를 쓴다 —
           카드에서 본 장면을 상세에서 또 보여줄 이유가 없다.
           파일이 없으면 회색 플레이스홀더가 자리를 지킨다. */}
-      <FadeUp>
-        {project.cover ? (
-          /* 비율을 자르지 않는다. 케이스 스터디 이미지는 세로로 아주 길 수
-             있고, 고정 비율 박스에 넣으면 대부분이 잘려 나간다. */
-          <div
-            className="w-full overflow-hidden rounded-md bg-surface"
-            style={{ marginTop: "var(--space-block)" }}
-          >
-            <Image
-              src={project.cover.src}
-              alt={t(project.title)}
-              width={project.cover.width}
-              height={project.cover.height}
-              priority
-              /* 케이스 스터디는 작은 글씨가 많다. 기본 75로는 텍스트
-                 가장자리에 압축 잡티가 보여 90으로 올린다. */
-              quality={90}
-              sizes="(min-width: 1280px) 1200px, 100vw"
-              className="h-auto w-full"
-            />
-          </div>
-        ) : (
+      {covers.length > 0 ? (
+        /* 비율을 자르지 않는다. 케이스 스터디 이미지는 세로로 아주 길 수
+           있고, 고정 비율 박스에 넣으면 대부분이 잘려 나간다.
+           장마다 비율이 달라도 좌우 폭만 맞춰 쌓는다. */
+        <div
+          className="flex flex-col"
+          style={{
+            marginTop: "var(--space-block)",
+            gap: "var(--space-gallery)",
+          }}
+        >
+          {covers.map((cover, index) => (
+            <FadeUp key={cover.src}>
+              <div className="w-full overflow-hidden rounded-md bg-surface">
+                <Image
+                  src={cover.src}
+                  alt={`${t(project.title)} ${index + 1}`}
+                  width={cover.width}
+                  height={cover.height}
+                  /* 첫 장만 우선 로드한다. 나머지는 스크롤해서
+                     도달할 때 받아온다. */
+                  priority={index === 0}
+                  loading={index === 0 ? undefined : "lazy"}
+                  /* 케이스 스터디는 작은 글씨가 많다. 기본 75로는 텍스트
+                     가장자리에 압축 잡티가 보여 90으로 올린다. */
+                  quality={90}
+                  sizes="(min-width: 1280px) 1200px, 100vw"
+                  className="h-auto w-full"
+                />
+              </div>
+            </FadeUp>
+          ))}
+        </div>
+      ) : (
+        <FadeUp>
           <div
             className="relative aspect-[16/9] w-full overflow-hidden rounded-md bg-surface"
             style={{ marginTop: "var(--space-block)" }}
@@ -115,8 +129,8 @@ export function ProjectDetail({ project }: { project: Project }) {
               </span>
             </div>
           </div>
-        )}
-      </FadeUp>
+        </FadeUp>
+      )}
 
       {/* 시연 영상. 상세 이미지를 대체하지 않고 그 아래에 붙는다. */}
       {project.video && (
