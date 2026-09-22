@@ -83,7 +83,7 @@ export const projects: Project[] = [
     thumbnail: "/projects/google-maps/thumbnail.png",
     // 세로로 아주 긴 케이스 스터디 이미지. 비율을 자르지 않고 그대로 보여준다.
     covers: [
-      { src: "/projects/google-maps/cover.png", width: 1920, height: 12100 },
+      { src: "/projects/google-maps/cover.jpg", width: 1920, height: 12100 },
     ],
     // 시연 영상. 상세에서 cover 이미지 아래 200px 간격을 두고 붙는다.
     video: {
