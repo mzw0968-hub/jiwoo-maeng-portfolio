@@ -122,8 +122,8 @@ export const projects: Project[] = [
       en: "CO-US",
     },
     summary: {
-      ko: "[한 줄 요약을 채워주세요. 진행 중인 프로젝트이므로 과정 중심으로.]",
-      en: "[One-line summary. This one is in progress, so lead with the process.]",
+      ko: "대화로 탄소 발자국을 기록하고, 혼자서는 작은 감축을 모두의 총량으로 보여주는 AI 앱",
+      en: "An AI app that logs your carbon footprint through conversation, and makes reductions that are tiny alone add up to something visible together.",
     },
     category: "ui-ai",
     status: "wip",
@@ -131,28 +131,30 @@ export const projects: Project[] = [
       ko: "기획 · 디자인 · 구현",
       en: "Product · Design · Development",
     },
-    period: "[기간] - 진행 중",
+    /* 진행 중 여부는 상태 배지가 양 언어로 표시한다. 이 필드는
+       LocalizedText가 아니므로 한글을 넣으면 영문 모드에서도 한글이 뜬다. */
+    period: "2026.06 ~",
     tools: ["Figma", "Claude Code"],
     body: {
       problem: {
-        ko: "[어떤 문제에서 출발했는지 적어주세요.]",
-        en: "[The problem this started from.]",
+        ko: "기후 위기에 대한 관심은 어느 때보다 높지만 개인의 행동은 세 개의 벽에 막혀 있습니다. 자기 하루가 얼마나 배출하는지 아는 사람이 거의 없고, “지구를 위해”라는 말은 너무 추상적이라 습관을 지탱하지 못하며, 한 사람의 감축량은 정직하게 보여줄수록 무의미해 보입니다. 기존 앱은 입력이 번거로운 대시보드이거나, 실제 효과와 무관한 포인트를 주는 챌린지이거나, 죄책감에 기대는 캠페인이었습니다.",
+        en: "Public concern about the climate has never been higher, yet individual action runs into three walls. Almost nobody knows how much their own day emits, “for the planet” is too abstract to sustain a habit, and one person's reductions look more pointless the more honestly you show them. Existing apps were either dashboards that were tedious to fill in, challenges handing out points detached from any real effect, or campaigns leaning on guilt.",
       },
       process: {
-        ko: "[지금까지의 과정을 적어주세요. 완성작이 아니어도 과정 자체가 보여줄 것이 많습니다.]",
-        en: "[The process so far. An unfinished project can still show a lot.]",
+        ko: "세 개의 벽을 각각 대화형 기록, 애착 기반 동기, 정직한 집계로 넘기로 하고 앱을 홈(대화) · 내 데이터(장부) · 우리(소속감) 세 존으로 나눴습니다. 가장 많은 시간을 쓴 것은 기능을 더하는 일이 아니라 하지 않을 일의 목록을 쓰는 일이었습니다. 마이너스 부호는 쓰지 않고, 배출 기록은 숫자를 만들지 않으며, 내 감축량을 전체로 나눈 값은 어떤 화면에도 그리지 않습니다. 정직함이 흔들리면 소속감이 가장 먼저 무너진다고 봤기 때문입니다.",
+        en: "I set out to cross those three walls with conversational logging, affection-based motivation and honest aggregation, and split the app into three zones — Home for conversation, My Data as a ledger, and Us for belonging. What took the most time was not adding features but writing the list of things the product may not do. No minus sign; an emission log produces no figure at all; and no screen ever draws the user's reduction divided by the collective. If the honesty gives way, the sense of belonging is the first thing to collapse.",
       },
       aiWorkflow: {
-        ko: "[어떤 엔진을 왜 썼는지, 프롬프트 설계에서 신경 쓴 점을 적어주세요.]",
-        en: "[Which engines and why, and what you paid attention to when designing prompts.]",
+        ko: "Claude Code로 기획 문서를 쓰고, 같은 문서를 기준으로 Figma MCP로 디자인 파일을 직접 조작하고, 인터랙티브 프로토타입까지 하나의 흐름으로 만들었습니다. 프롬프트는 화면을 통째로 요구하는 대신, 이 지표를 이렇게 그리면 내가 세운 어떤 규칙을 어기는지 먼저 확인시키는 방식으로 설계했습니다. AI가 관성적으로 제안한 차트를 제 규칙에 맞게 되돌린 적이 여러 번 있었고, 색 대비도 눈짐작 대신 실측해서 쓸 수 없는 색을 걸러냈습니다.",
+        en: "I wrote the product document in Claude Code, drove the Figma file directly through Figma MCP against that same document, and built an interactive prototype in one continuous pass. Rather than asking for a whole screen at once, I designed prompts to make the model check first which of my own rules a given treatment would break. Several times that turned back charts it had reached for out of habit, and I measured colour contrast rather than eyeballing it to rule out the shades that could not be used.",
       },
       result: {
-        ko: "[현재까지의 산출물을 적어주세요.]",
-        en: "[What exists so far.]",
+        ko: "기획 문서와 브랜드 · 화면 구조 설계, 그리고 Us 존에 집중한 인터랙티브 프로토타입이 나와 있습니다. 대화 엔진은 실제 AI가 아니라 규칙 기반 더미이고 집단 수치는 가상값입니다 — 서버 이전 단계에서 없는 사용자를 지어내지 않기 위한 선택이고, 화면에도 추정치임을 밝혔습니다. 현재는 Expo로 실제 앱 구현을 시작한 단계입니다.",
+        en: "There is a product document, a brand and screen-structure system, and an interactive prototype focused on the Us zone. The conversation engine is a rule-based stand-in rather than real AI and the collective figures are simulated — a deliberate choice, since before there is a server the alternative is inventing users who do not exist, and the screens say the figures are estimates. I have now started building the real app in Expo.",
       },
       learnings: {
-        ko: "[진행하면서 배운 점 2~3줄.]",
-        en: "[Two or three lines on what you've learned so far.]",
+        ko: "제품을 정의하는 일이 무엇을 넣을지 고르는 일보다 무엇을 그리지 않을지 정하는 일에 가깝다는 것을 배웠습니다. 마이너스 부호 하나를 금지하자 데이터 모델에서 뺄셈이 사라졌고, 그 덕분에 “벌점은 없다”가 약속이 아니라 구조가 됐습니다. 또 AI에게 기능을 시키는 것보다 제약을 검증시키는 편이 훨씬 정확하다는 것 — 판단 기준을 먼저 세워두면 AI가 그 기준으로 제 결정을 되짚어 줍니다.",
+        en: "I learned that defining a product is less about choosing what to put in than about deciding what never to draw. Banning a single minus sign removed subtraction from the data model, which turned “there is no penalty” from a promise into a structure. I also learned that asking AI to verify constraints is far more reliable than asking it to produce features — once the criteria are set down first, AI will use them to check my own decisions back at me.",
       },
     },
   },
