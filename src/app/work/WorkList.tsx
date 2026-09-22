@@ -13,12 +13,11 @@ import { SectionTitle } from "@/components/SectionTitle";
 const filters: { value: ProjectCategory | "all"; href: string }[] = [
   { value: "all", href: "/work" },
   { value: "ui-ai", href: "/work?category=ui-ai" },
-  { value: "ui", href: "/work?category=ui" },
   { value: "branding", href: "/work?category=branding" },
 ];
 
 function isCategory(value: string | null): value is ProjectCategory {
-  return value === "ui-ai" || value === "ui" || value === "branding";
+  return value === "ui-ai" || value === "branding";
 }
 
 export function WorkList() {
@@ -35,7 +34,11 @@ export function WorkList() {
   const visible =
     active === "all"
       ? projects
-      : projects.filter((project) => project.category === active);
+      : projects.filter((project) =>
+          active === "ui-ai"
+            ? project.category === "ui-ai" || project.category === "ui"
+            : project.category === active,
+        );
 
   return (
     <div
