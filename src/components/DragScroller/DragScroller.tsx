@@ -55,13 +55,17 @@ export function DragScroller({
     const el = ref.current;
     if (!el) return;
 
+    /* 여기서 setPointerCapture를 부르면 안 된다. 캡처가 걸리는 순간
+       pointerup·mouseup이 이 컨테이너로 재타겟되고, click의 타깃은
+       mousedown·mouseup 타깃의 공통 조상으로 정해지므로 컨테이너가
+       된다. 그러면 카드 안의 <a>는 click을 아예 못 받아 링크가 죽는다.
+       캡처는 실제로 끌기 시작한 뒤에 건다. */
     drag.current = {
       active: true,
       startX: event.clientX,
       startLeft: el.scrollLeft,
       moved: false,
     };
-    el.setPointerCapture(event.pointerId);
   };
 
   const onPointerMove = (event: PointerEvent<HTMLDivElement>) => {
@@ -69,7 +73,13 @@ export function DragScroller({
     if (!drag.current.active || !el) return;
 
     const dx = event.clientX - drag.current.startX;
-    if (Math.abs(dx) > DRAG_THRESHOLD) drag.current.moved = true;
+    if (Math.abs(dx) > DRAG_THRESHOLD && !drag.current.moved) {
+      drag.current.moved = true;
+      /* 이제부터는 진짜 드래그다. 포인터가 영역 밖으로 나가도 계속
+         따라오도록 이 시점에 캡처를 건다. 링크는 이미 포기된 상태라
+         재타겟돼도 잃을 것이 없다. */
+      el.setPointerCapture(event.pointerId);
+    }
     el.scrollLeft = drag.current.startLeft - dx;
   };
 
@@ -101,6 +111,11 @@ export function DragScroller({
       onPointerMove={onPointerMove}
       onPointerUp={endDrag}
       onPointerCancel={endDrag}
+      /* 카드 안의 이미지·링크는 브라우저 기본 끌어놓기 대상이다. 그게
+         발동하면 dragstart 직후 pointercancel이 날아와 포인터 스트림이
+         끊기고 스크롤이 첫 한 칸에서 멈춘다. 예전에는 pointerdown에서
+         건 캡처가 이걸 억눌러 주고 있었다. */
+      onDragStart={(event) => event.preventDefault()}
       onClickCapture={onClickCapture}
       className={[
         "no-scrollbar cursor-grab select-none overflow-x-auto active:cursor-grabbing",
