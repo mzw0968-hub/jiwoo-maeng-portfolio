@@ -28,8 +28,13 @@ export const projects: Project[] = [
     period: "2 Days",
     tools: ["Codex"],
     thumbnail: "/projects/todo-tool/thumbnail.png",
+    /* 원본 cover.png(3124x32768)를 흰 여백 띠 한가운데에서 3분할한 것이다.
+       한 장으로 두면 세로가 WebP 한계(16,383px)를 넘어 최적화가 통째로
+       실패하고 6.8MB PNG 원본이 그대로 나간다. 원본은 지우지 않았다. */
     covers: [
-      { src: "/projects/todo-tool/cover.png", width: 3124, height: 32768 },
+      { src: "/projects/todo-tool/cover-1.png", width: 3124, height: 11061 },
+      { src: "/projects/todo-tool/cover-2.png", width: 3124, height: 11059 },
+      { src: "/projects/todo-tool/cover-3.png", width: 3124, height: 10648 },
     ],
     body: {
       problem: {
