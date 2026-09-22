@@ -15,7 +15,7 @@ export type LocalizedText = {
 
 /** 고유명사(도구 이름), URL, 이메일은 번역하지 않으므로 그냥 string을 쓴다. */
 
-export type ProjectCategory = "ui-ai" | "branding";
+export type ProjectCategory = "ui-ai" | "ui" | "branding";
 
 export type ProjectStatus = "done" | "wip";
 

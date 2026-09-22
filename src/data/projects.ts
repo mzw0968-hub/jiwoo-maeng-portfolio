@@ -169,7 +169,7 @@ export const projects: Project[] = [
       ko: "청각장애인을 위한 오프라인 소통 앱",
       en: "An offline communication app for people with hearing impairments.",
     },
-    category: "ui-ai",
+    category: "ui",
     status: "done",
     role: {
       ko: "기획 · 디자인 · 프로토타이핑",
@@ -230,7 +230,7 @@ export const projects: Project[] = [
       en: "[One-line summary: what you led as concept lead of a six-person team.]",
     },
     category: "branding",
-    status: "done",
+    status: "wip",
     role: {
       ko: "컨셉팀장 · 로고 · 타이포 · 컬러 · 굿즈 · 도록 · 영상 · 포스터 총괄",
       en: "Concept Lead — logo, type, color, merchandise, catalogue, video, posters",

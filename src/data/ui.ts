@@ -57,6 +57,8 @@ export const ui = {
 export const categoryLabel: Record<ProjectCategory, LocalizedText> = {
   // 카테고리 값("ui-ai")은 URL 쿼리에 쓰이므로 바꾸지 않는다. 라벨만 바꾼다.
   "ui-ai": { ko: "UXUI·AI 구현", en: "UXUI & AI" },
+  // AI를 쓰지 않은 UXUI 작업. "AI 구현"을 달면 사실과 달라진다.
+  ui: { ko: "UXUI", en: "UXUI" },
   branding: { ko: "브랜딩·그래픽", en: "Branding & Graphics" },
 };
 
