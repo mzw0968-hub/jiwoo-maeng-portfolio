@@ -135,6 +135,7 @@ export const projects: Project[] = [
        LocalizedText가 아니므로 한글을 넣으면 영문 모드에서도 한글이 뜬다. */
     period: "2026.06 ~",
     tools: ["Figma", "Claude Code"],
+    thumbnail: "/projects/co-us/thumbnail.jpg",
     body: {
       problem: {
         ko: "기후 위기에 대한 관심은 어느 때보다 높지만 개인의 행동은 세 개의 벽에 막혀 있습니다. 자기 하루가 얼마나 배출하는지 아는 사람이 거의 없고, “지구를 위해”라는 말은 너무 추상적이라 습관을 지탱하지 못하며, 한 사람의 감축량은 정직하게 보여줄수록 무의미해 보입니다. 기존 앱은 입력이 번거로운 대시보드이거나, 실제 효과와 무관한 포인트를 주는 챌린지이거나, 죄책감에 기대는 캠페인이었습니다.",
