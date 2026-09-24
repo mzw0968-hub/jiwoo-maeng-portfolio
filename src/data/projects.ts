@@ -136,6 +136,13 @@ export const projects: Project[] = [
     period: "2026.06 ~",
     tools: ["Figma", "Claude Code"],
     thumbnail: "/projects/co-us/thumbnail.jpg",
+    /* 한 장을 3등분한 것이라 간격 없이 이어 붙인다. */
+    coversContinuous: true,
+    covers: [
+      { src: "/projects/co-us/cover-1.png", width: 3840, height: 21704 },
+      { src: "/projects/co-us/cover-2.png", width: 3840, height: 21704 },
+      { src: "/projects/co-us/cover-3.png", width: 3840, height: 16644 },
+    ],
     body: {
       problem: {
         ko: "기후 위기에 대한 관심은 어느 때보다 높지만 개인의 행동은 세 개의 벽에 막혀 있습니다. 자기 하루가 얼마나 배출하는지 아는 사람이 거의 없고, “지구를 위해”라는 말은 너무 추상적이라 습관을 지탱하지 못하며, 한 사람의 감축량은 정직하게 보여줄수록 무의미해 보입니다. 기존 앱은 입력이 번거로운 대시보드이거나, 실제 효과와 무관한 포인트를 주는 챌린지이거나, 죄책감에 기대는 캠페인이었습니다.",
@@ -220,43 +227,6 @@ export const projects: Project[] = [
     },
   },
 
-  {
-    slug: "grad-exhibition",
-    title: {
-      ko: "졸업전시 브랜딩",
-      en: "Graduation Exhibition Branding",
-    },
-    summary: {
-      ko: "[한 줄 요약을 채워주세요. 6명 팀의 컨셉팀장으로서 무엇을 총괄했는지.]",
-      en: "[One-line summary: what you led as concept lead of a six-person team.]",
-    },
-    category: "branding",
-    status: "wip",
-    role: {
-      ko: "컨셉팀장 · 로고 · 타이포 · 컬러 · 굿즈 · 도록 · 영상 · 포스터 총괄",
-      en: "Concept Lead — logo, type, color, merchandise, catalogue, video, posters",
-    },
-    period: "2025.10 ~ 2026.12",
-    tools: ["Figma", "Photoshop", "Illustrator"],
-    body: {
-      problem: {
-        ko: "[전시의 컨셉을 어떻게 정의했는지, 어떤 과제가 있었는지 적어주세요.]",
-        en: "[How you defined the exhibition concept, and what the challenge was.]",
-      },
-      process: {
-        ko: "[컨셉 → 스토리 → 비주얼 시스템으로 이어진 과정과 6명 팀을 어떻게 이끌었는지 적어주세요.]",
-        en: "[From concept to story to visual system, and how you led a team of six.]",
-      },
-      result: {
-        ko: "[로고, 타이포, 포스터, 굿즈, 도록 결과물을 적어주세요.]",
-        en: "[The logo, typography, posters, merchandise, and catalogue.]",
-      },
-      learnings: {
-        ko: "[배운 점 2~3줄.]",
-        en: "[Two or three lines on what you learned.]",
-      },
-    },
-  },
 
 ];
 

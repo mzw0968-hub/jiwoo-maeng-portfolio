@@ -86,7 +86,8 @@ export function ProjectDetail({ project }: { project: Project }) {
           className="media-column flex flex-col"
           style={{
             marginTop: "var(--space-block)",
-            gap: "var(--space-gallery)",
+            /* 잘라 놓은 한 장이면 붙여야 이어 보인다. */
+            gap: project.coversContinuous ? 0 : "var(--space-gallery)",
           }}
         >
           {covers.map((cover, index) => (

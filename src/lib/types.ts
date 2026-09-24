@@ -79,6 +79,12 @@ export type Project = {
    */
   covers?: ProjectImage[];
   /**
+   * covers가 한 장짜리 이미지를 잘라 놓은 것일 때 true.
+   * 장 사이 간격을 0으로 붙여 원래 한 장처럼 이어 보이게 한다.
+   * 서로 다른 장면을 나열하는 경우(Picon)는 간격이 있어야 하므로 기본은 false.
+   */
+  coversContinuous?: boolean;
+  /**
    * 시연 영상. 상세 페이지에서 cover 이미지 **아래에** 붙는다.
    * 카드에서는 썸네일이 없을 때만 쓰인다.
    */

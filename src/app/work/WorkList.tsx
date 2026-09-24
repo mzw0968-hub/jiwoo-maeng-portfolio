@@ -13,11 +13,10 @@ import type { WorkListProps } from "./WorkList.types";
 const filters: { value: ProjectCategory | "all"; href: string }[] = [
   { value: "all", href: "/work" },
   { value: "ui-ai", href: "/work?category=ui-ai" },
-  { value: "branding", href: "/work?category=branding" },
 ];
 
 function isCategory(value: string | undefined): value is ProjectCategory {
-  return value === "ui-ai" || value === "branding";
+  return value === "ui-ai";
 }
 
 /**
