@@ -97,9 +97,9 @@ export type ToolProficiency = {
 /** 사용 도구와 활용 수준. 수준 표현은 지우 님이 조정해주세요. */
 export const tools: ToolProficiency[] = [
   { name: "Figma", level: { ko: "주력", en: "Primary" } },
-  { name: "Figma Make", level: { ko: "주력", en: "Primary" } },
   { name: "Claude Code", level: { ko: "주력", en: "Primary" } },
-  { name: "Codex", level: { ko: "활용", en: "Working" } },
+  { name: "Codex", level: { ko: "주력", en: "Primary" } },
+  { name: "Figma Make", level: { ko: "주력", en: "Primary" } },
   { name: "Gemini", level: { ko: "활용", en: "Working" } },
   { name: "Grok", level: { ko: "활용", en: "Working" } },
   { name: "Antigravity", level: { ko: "활용", en: "Working" } },

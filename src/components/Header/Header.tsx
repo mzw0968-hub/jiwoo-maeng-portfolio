@@ -66,7 +66,7 @@ export function Header({ className = "" }: HeaderProps) {
 
       <div className="container-page flex h-16 items-center justify-between">
         <Link href="/" className="text-body font-medium tracking-tight">
-          {t(site.name)}
+          {t(site.wordmark)}
         </Link>
 
         <div className="flex items-center gap-6">

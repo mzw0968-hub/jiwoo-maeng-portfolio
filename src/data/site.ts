@@ -7,6 +7,15 @@ import type { LocalizedText } from "@/lib/types";
 export const site = {
   name: { ko: "맹지우", en: "Jiwoo Maeng" } satisfies LocalizedText,
 
+  /**
+   * 헤더 좌상단 워드마크. name과 따로 두는 이유는 name을 About 제목과
+   * 메타데이터가 함께 쓰기 때문이다 — 거기까지 "Portfolio"가 붙으면 안 된다.
+   */
+  wordmark: {
+    ko: "맹지우 Portfolio",
+    en: "Jiwoo Maeng Portfolio",
+  } satisfies LocalizedText,
+
   /** 두 언어 모드 공통으로 영문을 유지한다. (PRD 5.1) */
   headline: "From AI capability to human experience.",
 
