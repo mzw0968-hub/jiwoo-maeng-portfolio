@@ -30,11 +30,15 @@ export function FadeUp({ children, delay = 0, className }: FadeUpProps) {
       initial={{ opacity: 0, y: reduceMotion ? 0 : 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={
-        reduceMotion
-          ? { duration: 0 }
-          : { duration: 0.32, delay, ease: [0.22, 1, 0.36, 1] }
-      }
+      /* duration을 0으로 주면 Motion이 애니메이션을 건너뛰면서 목표값을
+         반영하지 않아 요소가 initial에 멈춘다. 그래서 시간은 그대로 두고
+         움직임(y)만 없앤다 — 남는 것은 위치 변화 없는 페이드뿐이라
+         reduced-motion이 막으려는 종류의 움직임에 해당하지 않는다. */
+      transition={{
+        duration: 0.32,
+        delay: reduceMotion ? 0 : delay,
+        ease: [0.22, 1, 0.36, 1],
+      }}
     >
       {children}
     </motion.div>
