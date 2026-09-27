@@ -58,7 +58,7 @@ export const timeline: TimelineEntry[] = [
     },
   },
   {
-    period: { ko: "[기간]", en: "[Period]" },
+    period: { ko: "2025.03 ~ 2025.06", en: "2025.03 ~ 2025.06" },
     title: {
       ko: "제품 디자인 동아리 팀 리딩",
       en: "Led a product design club",
@@ -69,7 +69,7 @@ export const timeline: TimelineEntry[] = [
     },
   },
   {
-    period: { ko: "[기간]", en: "[Period]" },
+    period: { ko: "2025.09 ~", en: "2025.09 ~" },
     title: { ko: "졸업전시 컨셉팀장", en: "Concept lead, graduation exhibition" },
     description: {
       ko: "6명 팀 · 컨셉, 스토리, 로고, 타이포, 컬러, 굿즈, 도록, 영상, 포스터 총괄",
@@ -77,7 +77,7 @@ export const timeline: TimelineEntry[] = [
     },
   },
   {
-    period: { ko: "[기간]", en: "[Period]" },
+    period: { ko: "2026.04", en: "2026.04" },
     title: {
       ko: "멘토링 특강",
       en: "Mentoring talk",
