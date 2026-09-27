@@ -50,7 +50,7 @@ export type TimelineEntry = {
 
 export const timeline: TimelineEntry[] = [
   {
-    period: { ko: "중학교", en: "Middle school" },
+    period: { ko: "2014.02 ~ 2015.06", en: "2014.02 ~ 2015.06" },
     title: { ko: "캐나다 어학연수", en: "Studied in Canada" },
     description: {
       ko: "8학년 1학기, 9학년 이수",
